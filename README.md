@@ -17,7 +17,7 @@ Job log:
 Vytvoril som hosting pre nasu stranku, vytvoril kostru projektu, pripravil git repozitar https://github.com/elcomtik/WebTech1, a pushnul prve data. Pripravil guidline na pracu so serverom a git projektom<br>
 
 * 2016-11-13 Martin Meľuch:<br>
-Vytvorení visit counter. Stačí do html súbor pridať
+Vytvorení visit counter. Počet návštev ukladá do cookie súboru. Stačí do html súbor pridať
 ```html
  <div id="counter"></div>
  <script language="javascript">checkVisitsCookie();</script>
