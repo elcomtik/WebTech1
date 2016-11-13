@@ -18,7 +18,6 @@ Vytvoril som hosting pre nasu stranku, vytvoril kostru projektu, pripravil git r
 
 * 2016-11-13 Martin Meľuch:<br>
 Vytvorení visit counter. Stačí do html súbor pridať
- <!--
+
  <div id="counter"></div>
  <script language="javascript">checkVisitsCookie();</script>
- -->
