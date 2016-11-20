@@ -15,3 +15,6 @@ Job log:
 ========
 * 2019-11-06 Roman Danko:<br>
 Vytvoril som hosting pre nasu stranku, vytvoril kostru projektu, pripravil git repozitar https://github.com/elcomtik/WebTech1, a pushnul prve data. Pripravil guidline na pracu so serverom a git projektom<br>
+
+* 2016-11-20 Lukas Snider:<br>
+Vytvoril som podstránku pripomienkovača osobných úloh, so základnou funkcionalitou popísanou v podmienkach - možnosť zadať úlohu, ktorá sa vypíše medzi ostatnými, vymazanie úlohy.<br>
