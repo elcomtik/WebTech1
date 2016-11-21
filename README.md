@@ -22,3 +22,6 @@ Vytvorení visit counter. Počet návštev ukladá do cookie súboru. Stačí do
  <div id="counter"></div>
  <script language="javascript">checkVisitsCookie();</script>
 ```
+
+* 2016-11-20 Lukas Snider:<br>
+Vytvoril som podstránku pripomienkovača osobných úloh, so základnou funkcionalitou popísanou v podmienkach - možnosť zadať úlohu, ktorá sa vypíše medzi ostatnými, vymazanie úlohy.<br>

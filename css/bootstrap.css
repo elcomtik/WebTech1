@@ -6799,3 +6799,15 @@ button.close {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
+
+/* reminder subpage */
+#notes-list {
+  width: 70%;
+  float: right;
+}
+
+#note-add-new {
+  width: 30%;
+  float: left;
+}
+
