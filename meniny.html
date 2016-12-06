@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Projekt</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+</head>
+
+<body >
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Názov</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Úvod <span class="sr-only">(current)</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pamiatky <span class="caret"></span></a>
+                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                        <li><a href="#"></a></li>
+                        <li><a href="#">Nejaký odkaz</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Technické pamiatky</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Kalendár</a></li>
+                <li><a href="#">Pripomienkovač</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Autori <span class="caret"></span></a>
+                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Roman Danko</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Adam Podhradský</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Erik Pribula</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Lukáš Šníder</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Martin Meľuch</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+        
+
+function hladajDatum()
+{
+	var xmlDoc;
+	var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function()
+    {
+    	if (this.readyState == 4 && this.status == 200)
+    	{
+    	najdiDatum(this);
+    	}
+	}
+    xhttp.open("GET", "data/meniny.xml", true);
+    xhttp.send();
+}
+
+    function najdiDatum(xml)
+    {
+        xmlDoc = xml.responseXML;
+        //document.getElementById("vysledok").innerHTML =
+        //xmlDoc.getElementsByTagName("SK")[0].childNodes[0].nodeValue;
+        var i = 0;
+    	var meno=document.getElementById("meno").value;
+    	meno = meno.toLowerCase();
+    	//console.log(meno)
+    	
+		var mena = xmlDoc.getElementsByTagName("zaznam");
+		for (var x = 0; x < mena.length; x++)
+		{
+			if(mena[x].getElementsByTagName("SK").length!==0)
+			{
+				var aaa = mena[x].getElementsByTagName("SK")[0].innerHTML;
+				//console.log(aaa)
+				var bbb = aaa.split(", ");
+				for (var y = 0; y < bbb.length; y++)
+				{
+					bbb[y] = bbb[y].toLowerCase()
+					if (meno==bbb[y]) {
+						var datum = mena[x].getElementsByTagName("den")[0].innerHTML;
+						document.getElementById("vysledok").innerHTML = datum.slice(2,4) + '.' + datum.slice(0,2);
+						return
+					}
+				}	
+				/*//prerobit na ==
+				if(mena[x].getElementsByTagName("SK")[0].innerHTML.indexOf(meno)!==-1)
+				{
+					var datum = mena[x].getElementsByTagName("den")[0].innerHTML;
+					document.getElementById("vysledok").innerHTML = datum.slice(2,4) + '.' + datum.slice(0,2);
+					return
+				}*/
+			}
+			i++;
+		}
+		document.getElementById("vysledok").innerHTML = "zadané meno sa nenašlo";
+}
+
+function hladajMeno()
+{
+	var xmlDoc;
+	var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function()
+    {
+    	if (this.readyState == 4 && this.status == 200)
+    	{
+    	najdiMeno(this);
+    	}
+	}
+    xhttp.open("GET", "data/meniny.xml", true);
+    xhttp.send();
+}
+
+    function najdiMeno(xml)
+    {
+        xmlDoc = xml.responseXML;
+        //document.getElementById("vysledok").innerHTML =
+        //xmlDoc.getElementsByTagName("SK")[0].childNodes[0].nodeValue;
+        var i = 0;
+    	var datum=document.getElementById("datum").value;
+    	if (datum.length==5)
+    	{
+    		var mesiac = datum.slice(3,5);
+    		var den = datum.slice(0,2);
+    		console.log(den)
+    		console.log(mesiac)
+    		datum=mesiac+den;
+    		console.log(datum)
+    	}
+    	
+    	//console.log(meno)
+    	
+		var vsetko = xmlDoc.getElementsByTagName("zaznam");
+		for (var x = 0; x < vsetko.length; x++)
+		{
+			if(vsetko[x].getElementsByTagName("SK").length!==0)
+			{
+				if(vsetko[x].getElementsByTagName("den")[0].innerHTML==datum)
+				{
+					var datum = vsetko[x].getElementsByTagName("SKd")[0].innerHTML;
+					document.getElementById("vysledok").innerHTML = datum
+					return
+				}
+			}
+			i++;
+		}
+		document.getElementById("vysledok").innerHTML = "v zadanom dátume nikto nemá meniny";
+}
+
+</script>
+
+Zadaj meno:<input type="text" id="meno"><button onclick="hladajDatum()">Hľadaj podľa mena</button><br><br>
+Zadaj dátum:<input type="text" id="datum"><button onclick="hladajMeno()">Hľadaj podľa dátumu</button>
+<p id="vysledok"></p>
+
+</body>
+</html>
