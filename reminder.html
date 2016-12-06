@@ -4,47 +4,135 @@
 <html>
 	<head>
 		<title>Reminder</title>
-        <meta charset="UTF-8"/>
-        <script src="js/jquery-3.1.1.min.js"></script>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="js/reminder.js"></script>
-    </head>
+      <meta charset="UTF-8"/>
+      <script src="js/jquery-3.1.1.min.js"></script>
+      <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+			<link href="css/reminder.css" rel="stylesheet" type="text/css">
+      <script type="text/javascript" src="js/reminder.js"></script>
+  </head>
     <body>
-        <div id="main">
-            <header>
+			<nav class="navbar navbar-default">
+			    <div class="container-fluid">
+			        <!-- Brand and toggle get grouped for better mobile display -->
+			        <div class="navbar-header">
+			            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			                <span class="sr-only">Toggle navigation</span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			            </button>
+			            <a class="navbar-brand" href="#">Názov</a>
+			        </div>
 
-            </header>
-            <div class="box-background">
-                <div id="notes-list" class="container">
-                    <h3>Zoznam Pripomienok</h3>
-                    <div class="reminder-notes">
-                        <div class="panel panel-default">
-                            <span class="close" onclick="deleteNote(this)">&times;</span>
-                            <div class="panel-heading">Title</div>
-                            <div class="panel-body">Content</div>
-                        </div>
-                    </div>
-                </div>
-                <div id="note-add-new" class="container">
-                    <h3>Nová Pripomienka</h3>
-                    <form name=add-form class=form-horizontal">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="note-name">Názov:</label>
-                            <div class="col-sm-10">
-                                <input type="text" id="note-name" class="form-control"/><p id="name"></p><br/>
-                            </div>
-                            <label class="col-sm-2 control-label" for="note-name">Popis:</label>
-                            <div class="col-sm-10">
-                                <textarea id="note-content" class="form-control"></textarea><br/>
-                            </div>
-                            <input type="button" class="btn btn-primary" value="Zadaj pripomienku" onclick="saveNote()">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <footer class="no-print">
+			        <!-- Collect the nav links, forms, and other content for toggling -->
+			        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			            <ul class="nav navbar-nav">
+			                <li class="active"><a href="#">Úvod <span class="sr-only">(current)</span></a></li>
+			                <li class="dropdown">
+			                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pamiatky <span class="caret"></span></a>
+			                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+			                        <li><a href="#"></a></li>
+			                        <li><a href="#">Nejaký odkaz</a></li>
+			                        <li class="divider"></li>
+			                        <li class="dropdown-submenu">
+			                            <a tabindex="-1" href="#">Technické pamiatky</a>
+			                            <ul class="dropdown-menu">
+			                                <li><a href="#">1</a></li>
+			                                <li><a href="#">2</a></li>
+			                                <li><a href="#">3</a></li>
+			                                <li><a href="#">4</a></li>
+			                                <li><a href="#">5</a></li>
+			                            </ul>
+			                        </li>
+			                    </ul>
+			                </li>
+			                <li><a href="#">Kalendár</a></li>
+			                <li><a href="reminder.html">Pripomienkovač</a></li>
+			                <li class="dropdown">
+			                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Autori <span class="caret"></span></a>
+			                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+			                        <li class="dropdown-submenu">
+			                            <a tabindex="-1" href="#">Roman Danko</a>
+			                            <ul class="dropdown-menu">
+			                                <li><a href="#">1</a></li>
+			                                <li><a href="#">2</a></li>
+			                                <li><a href="#">3</a></li>
 
-        </footer>
+			                            </ul>
+			                        </li>
+			                        <li class="dropdown-submenu">
+			                            <a tabindex="-1" href="#">Adam Podhradský</a>
+			                            <ul class="dropdown-menu">
+			                                <li><a href="#">1</a></li>
+			                                <li><a href="#">2</a></li>
+			                                <li><a href="#">3</a></li>
+
+			                            </ul>
+			                        </li>
+			                        <li class="dropdown-submenu">
+			                            <a tabindex="-1" href="#">Erik Pribula</a>
+			                            <ul class="dropdown-menu">
+			                                <li><a href="#">1</a></li>
+			                                <li><a href="#">2</a></li>
+			                                <li><a href="#">3</a></li>
+
+			                            </ul>
+			                        </li>
+			                        <li class="dropdown-submenu">
+			                            <a tabindex="-1" href="#">Lukáš Šníder</a>
+			                            <ul class="dropdown-menu">
+			                                <li><a href="#">1</a></li>
+			                                <li><a href="#">2</a></li>
+			                                <li><a href="#">3</a></li>
+
+			                            </ul>
+			                        </li>
+			                        <li class="dropdown-submenu">
+			                            <a tabindex="-1" href="#">Martin Meľuch</a>
+			                            <ul class="dropdown-menu">
+			                                <li><a href="#">1</a></li>
+			                                <li><a href="#">2</a></li>
+			                                <li><a href="#">3</a></li>
+			                            </ul>
+			                        </li>
+			                    </ul>
+			                </li>
+			            </ul>
+			        </div>
+			    </div>
+			</nav>
+      <div id="main">
+          <div class="box-background">
+              <div id="notes-list" class="container">
+                  <h3>Zoznam Pripomienok</h3>
+                  <div class="reminder-notes">
+                      <div class="panel panel-default">
+                          <span class="close" onclick="deleteNote(this)">&times;</span>
+                          <div class="panel-heading">Title</div>
+                          <div class="panel-body">Content</div>
+                      </div>
+                  </div>
+              </div>
+              <div id="note-add-new" class="container">
+                  <h3>Nová Pripomienka</h3>
+                  <form name="add-form" class="form-horizontal">
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label" for="note-name">Názov:</label>
+                          <div class="col-sm-10">
+                              <input type="text" id="note-name" class="form-control"/><p id="name"></p><br/>
+                          </div>
+                          <label class="col-sm-2 control-label" for="note-name">Popis:</label>
+                          <div class="col-sm-10">
+                              <textarea id="note-content" class="form-control"></textarea><br/>
+                          </div>
+                          <input type="button" class="btn btn-primary" value="Zadaj pripomienku" onclick="saveNote()">
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <footer class="no-print">
+
+      </footer>
     </body>
 </html>
