@@ -2,8 +2,9 @@ function generuj_menu() {
     var level1 = [
         {name : "Úvod", typ:0, ref:"index.html"},
         {name : "Technické pamiatky", typ:1, ref:""},
-        {name : "Kalendár", typ:0, ref:"meniny.html"},
-        {name : "Pripomienkovač", typ:0, ref:"reminder.html"},
+        {name : "Mapa", typ:0, ref:"html/g-mapa.html"},
+        {name : "Kalendár", typ:0, ref:"html/meniny.html"},
+        {name : "Pripomienkovač", typ:0, ref:"html/reminder.html"},
         {name : "Hry", typ:1, ref:""},
         {name : "Autori", typ:1, ref:""}];
 
@@ -20,8 +21,8 @@ function generuj_menu() {
         {name:"Vysutá lanová dráha", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Gápeľ-Solivar Prešov", typ:0, ref:"", autor:"Erik Pribula"},
         {name:"Hvezdáreň Prešov", typ:0, ref:"", autor:"Erik Pribula"},
-        {name:"Zvolenský hrad", typ:0, ref:"pamiatky-ls.html", autor:"Lukáš Šníder"},
-        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"pamiatky-ls.html", autor:"Lukáš Šníder"},
+        {name:"Zvolenský hrad", typ:0, ref:"html/pamiatky-ls.html", autor:"Lukáš Šníder"},
+        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"html/pamiatky-ls.html", autor:"Lukáš Šníder"},
         {name:"Jazero mieru", typ:0, ref:"", autor:"Martin Meľuch"},
         {name:"Slávikov mlyn", typ:0, ref:"", autor:"Martin Meľuch"},
     ];
