@@ -15,13 +15,13 @@ function generuj_menu() {
         {name:"Martin Meľuch", typ:1, ref:""}];
     var pamiaty = [
         {name:"Železiareň Františková Huta", typ:0, ref:"", autor:"Roman Danko"},
-        {name:"Železnica Oravská Lesná", typ:0, ref:"", autor:"Roman Danko"},
+        {name:"Kysucko-Oravská lesná úvraťová železnica", typ:0, ref:"", autor:"Roman Danko"},
         {name:"Čiernohronská železnica", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Vysutá lanová dráha", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Gápeľ-Solivar Prešov", typ:0, ref:"", autor:"Erik Pribula"},
         {name:"Hvezdáreň Prešov", typ:0, ref:"", autor:"Erik Pribula"},
-        {name:"Zvolenský hrad", typ:0, ref:"", autor:"Lukáš Šníder"},
-        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"", autor:"Lukáš Šníder"},
+        {name:"Zvolenský hrad", typ:0, ref:"pamiatky-ls.html", autor:"Lukáš Šníder"},
+        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"pamiatky-ls.html", autor:"Lukáš Šníder"},
         {name:"Jazero mieru", typ:0, ref:"", autor:"Martin Meľuch"},
         {name:"Slávikov mlyn", typ:0, ref:"", autor:"Martin Meľuch"},
     ];

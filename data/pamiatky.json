@@ -1,0 +1,34 @@
+{"pamiatky":
+  [
+    {
+      "nazov": "Hradná studňa",
+      "rokVzniku": "1382",
+      "sirka": "48.5762",
+      "dlzka": "19.1371"
+    },
+    {
+      "nazov": "Glanzenberg",
+      "rokVzniku": "1560",
+      "sirka": "48.4496",
+      "dlzka": "18.9087"
+    },
+    {
+      "nazov": "Františkova huta",
+      "rokVzniku": "1836",
+      "sirka": "49.297743",
+      "dlzka": "19.507890"
+    },
+    {
+      "nazov": "Kysucko-Oravská lesná úvraťová železnica",
+      "rokVzniku": "1926",
+      "sirka": "49.385448",
+      "dlzka": "19.161269"
+    },
+    {
+      "nazov": "",
+      "rokVzniku": "",
+      "sirka": "",
+      "dlzka": ""
+    },
+  ]
+}
