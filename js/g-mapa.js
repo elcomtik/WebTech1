@@ -3,6 +3,7 @@
  */
 
 var map, transitLayer, infowindow;
+var json, pamiatkyl
 
 function initializeMap() {
     //vytvorime mapu
@@ -17,8 +18,10 @@ function initializeMap() {
     //vykresli markery pre pamiatky z ext. JSON suboru. Realizovane pomocou jQuery funkcie
     $.getJSON( "../data/pamiatky.json", function( data ) {
 
-        console.log(data);
-        $.each( data.pamiatky, function( key, pam ) {
+        //console.log(data);
+        json = JSON.parse(data);
+        pamiatky = json.pamiatky;
+        $.each( pamiatky, function( key, pam ) {
 
             alert(pam.nazov);
             var pos = new google.maps.LatLng(pam.sirka,pam.dlzka);
