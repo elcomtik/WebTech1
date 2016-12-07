@@ -1,6 +1,6 @@
 function generuj_menu() {
     var level1 = [
-        {name : "Úvod", typ:0, ref:"index.html"},
+        {name : "Úvod", typ:0, ref:"/index.html"},
         {name : "Technické pamiatky", typ:1, ref:""},
         {name : "Mapa", typ:0, ref:"/html/g-mapa.html"},
         {name : "Kalendár", typ:0, ref:"/html/meniny.html"},
@@ -22,7 +22,7 @@ function generuj_menu() {
         {name:"Gápeľ-Solivar Prešov", typ:0, ref:"", autor:"Erik Pribula"},
         {name:"Hvezdáreň Prešov", typ:0, ref:"", autor:"Erik Pribula"},
         {name:"Zvolenský hrad", typ:0, ref:"/html/pamiatky-ls.html", autor:"Lukáš Šníder"},
-        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"html/pamiatky-ls.html", autor:"Lukáš Šníder"},
+        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"/html/pamiatky-ls.html", autor:"Lukáš Šníder"},
         {name:"Jazero mieru", typ:0, ref:"", autor:"Martin Meľuch"},
         {name:"Slávikov mlyn", typ:0, ref:"", autor:"Martin Meľuch"},
     ];
