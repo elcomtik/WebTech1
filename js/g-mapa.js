@@ -19,7 +19,7 @@ function initializeMap() {
 
         $.each( json.pamiatky, function( key, pam ) {
 
-            console.log(pam.nazov);
+            //console.log(pam.nazov);
             var pos = new google.maps.LatLng(pam.sirka,pam.dlzka);
             var marker = new google.maps.Marker({
                 position: pos,
