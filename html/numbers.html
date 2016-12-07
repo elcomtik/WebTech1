@@ -2,9 +2,22 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Canvas Drag and Drop Test</title>
+		<title>Hra čísla</title>
 	</head>
 	<body>
+
+		<h3>Návod na ovládanie:</h3>
+		<ol>
+			<li>Rozhodnite, či číslo je árne alebo nepárne</li>
+			<li>Potiahnite "kocku" do príslušného vedierka</li>
+			<li>Bodové ohodnotenie:
+				<ul>
+					<li>Za správne umiestnenie dostanete +1b</li>
+					<li>Za nesprávne umiestnenie vám budú odpočítané 2b</li>
+				</ul>
+			</li>
+		</ol>
+
 		<section>
 		<div>
 			<canvas id="canvas" width="800" height="500">
@@ -91,13 +104,15 @@
 				{
 					pocetbodov++;
 					console.log(pocetbodov);
+					document.getElementById("points").innerHTML=pocetbodov;
 					x=400-15;
 					y=460-15;
 				}
 				if (x>680 && x<780 && y>50 && y<150)
 				{
-					pocetbodov++;
+					pocetbodov-=2;
 					console.log(pocetbodov);
+					document.getElementById("points").innerHTML=pocetbodov;
 					x=400-15;
 					y=460-15;
 				}
@@ -110,5 +125,6 @@
 
 		</script>
 		</section>
+		<p>Aktuálny počet bodov: <div id="points">0</div></p>
 	</body>
 </html>
