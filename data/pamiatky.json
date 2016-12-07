@@ -1,5 +1,5 @@
-{"pamiatky":
-  [
+{
+  "pamiatky": [
     {
       "nazov": "Hradná studňa",
       "rokVzniku": "1382",
@@ -30,11 +30,17 @@
       "sirka": "48.976679",
       "dlzka": "21.278688"
     },
-     {
+    {
       "nazov": "Parná elekráreň Žilina",
       "rokVzniku": "1908",
       "sirka": "49.224109",
       "dlzka": "18.743320"
+    },
+    {
+      "nazov": "",
+      "rokVzniku": "",
+      "sirka": "",
+      "dlzka": ""
     }
   ]
 }
