@@ -3,7 +3,7 @@
  */
 
 var map, transitLayer, infowindow;
-var json, pamiatkyl
+var json, pamiatky;
 
 function initializeMap() {
     //vytvorime mapu
@@ -23,14 +23,14 @@ function initializeMap() {
         pamiatky = json.pamiatky;
         $.each( pamiatky, function( key, pam ) {
 
-            alert(pam.nazov);
+            console.log(pam.nazov);
             var pos = new google.maps.LatLng(pam.sirka,pam.dlzka);
             var marker = new google.maps.Marker({position: pos});
 
             infowindow = new google.maps.InfoWindow({
                 content: pam.nazov + "\n" + pam.rokVzniku
             });
-            infowindow.open(map,marker);
+            //infowindow.open(map,marker);
         });
 
 
