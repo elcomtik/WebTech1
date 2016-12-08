@@ -2,113 +2,37 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Canvas Drag and Drop Test</title>
+		<title>Hra čísla</title>
+		
+		<script type="text/javascript" src="../js/menu.js"></script>
+		<link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
 	</head>
-	<body>
-		<section>
-		<div>
+	<body onload="generuj_menu()">
+	<nav id="navbar"></nav>
+
+		<h3>Návod na ovládanie:</h3>
+		<ol>
+			<li>Rozhodnite, či číslo je árne alebo nepárne</li>
+			<li>Potiahnite "kocku" do príslušného vedierka</li>
+			<li>Bodové ohodnotenie:
+				<ul>
+					<li>Za správne umiestnenie dostanete +1b</li>
+					<li>Za nesprávne umiestnenie vám budú odpočítané 2b</li>
+				</ul>
+			</li>
+		</ol>
+
+		
+		
 			<canvas id="canvas" width="800" height="500">
 			This text is displayed if your browser does not support HTML5 Canvas.
 			</canvas>
-		</div>
+		
+<script type="text/javascript" src="../js/numbers.js"></script>
+		
+		
 
-		<script type="text/javascript">
-
-			var canvas;
-			var ctx;
-			var x = 400;
-			var y = 460;
-			var WIDTH = 800;
-			var HEIGHT = 500;
-			var dragok = false;
-			var pocetbodov = 0;
-
-			function rect(x,y,w,h) {
-			 ctx.beginPath();
-			 ctx.rect(x,y,w,h);
-			 ctx.closePath();
-			 ctx.fill();
-			}
-
-			function clear()
-			{
-				ctx.clearRect(0, 0, WIDTH, HEIGHT);
-			}
-
-			function init()
-			{
-				canvas = document.getElementById("canvas");
-				ctx = canvas.getContext("2d");
-				return setInterval(draw, 10);
-			}
-
-			function draw()
-			{
-				clear();
-				ctx.fillStyle = "#111111";
-				rect(0,0,WIDTH,HEIGHT);
-
-				ctx.fillStyle = "#444444";
-				rect(20, 50, 100, 100);
-				ctx.fillStyle = "#777777";
-				rect(680, 50, 100, 100);
-
-				ctx.fillStyle = "#FFFFFF";
-				rect(x - 15, y - 15, 30, 30);
-			}
-
-			function myMove(e)
-			{
-				//console.log(x);
-				//console.log(y);
-				if (dragok)
-				{
-					x = e.pageX - canvas.offsetLeft;
-					y = e.pageY - canvas.offsetTop;
-				}
-			}
-
-			function myDown(e)
-			{
-				if (e.pageX < x + 15 + canvas.offsetLeft && e.pageX > x - 15 +
-				canvas.offsetLeft && e.pageY < y + 15 + canvas.offsetTop &&
-				e.pageY > y -15 + canvas.offsetTop)
-				{
-					x = e.pageX - canvas.offsetLeft;
-					y = e.pageY - canvas.offsetTop;
-					dragok = true;
-					canvas.onmousemove = myMove;
-				}
-
-
-			}
-
-			function myUp()
-			{
-				dragok = false;
-				canvas.onmousemove = null;
-				if (x>20 && x<120 && y>50 && y<150)
-				{
-					pocetbodov++;
-					console.log(pocetbodov);
-					x=400-15;
-					y=460-15;
-				}
-				if (x>680 && x<780 && y>50 && y<150)
-				{
-					pocetbodov++;
-					console.log(pocetbodov);
-					x=400-15;
-					y=460-15;
-				}
-
-			}
-
-			init();
-			canvas.onmousedown = myDown;
-			canvas.onmouseup = myUp;
-
-		</script>
-		</section>
+		<p>Aktuálny počet bodov: <div id="points">0</div></p>
+		<p>Maximálny počet bodov: <div id="maximum">0</div></p>
 	</body>
 </html>

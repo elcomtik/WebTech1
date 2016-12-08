@@ -27,7 +27,7 @@ function hladajDatum()
         najdiDatum(this);
         }
     }
-    xhttp.open("GET", "data/meniny.xml", true);
+    xhttp.open("GET", "../data/meniny.xml", true);
     xhttp.send();
 }
 
@@ -75,7 +75,7 @@ function hladajMeno()
         najdiMeno(this);
         }
     }
-    xhttp.open("GET", "data/meniny.xml", true);
+    xhttp.open("GET", "/data/meniny.xml", true);
     xhttp.send();
 }
 
@@ -87,50 +87,55 @@ function hladajMeno()
         var i = 0;
         var datum=document.getElementById("datum").value;
         console.log(datum)
-        if (datum.length==5)//datum v tvare 12.04
+        if (datum.length==6)//datum v tvare 12.04.
         {
             var mesiac = datum.slice(3,5);
             var den = datum.slice(0,2);
-            console.log(den)
-            console.log(mesiac)
+            console.log(den);
+            console.log(mesiac);
             datum=mesiac+den;
-            console.log(datum)
-        }
-
-        if (datum.length==3) //datum v tvare 3.4
+            console.log(datum);
+		}
+        else
         {
-            var date = [0,0,0,0];
-            date[0]=0;
-            date[1]=datum[2]
-            date[2]=0
-            date[3]=datum[0]
-            datum = date.join('');
-            console.log(datum)
+	        if (datum.length==4) //datum v tvare 3.4.
+	        {
+	            var date = [0,0,0,0];
+	            date[0]=0;
+	            date[1]=datum[2];
+	            date[2]=0;
+	            date[3]=datum[0];
+	            datum = date.join('');
+	            console.log(datum);
+	        }
+	       
+	        if (datum.length==5)
+	        {
+	            if (datum[1]=='.') //datum v tvare 1.05.
+	            {
+	                var date = [0,0,0,0];
+	                date[0]=datum[2];
+	                date[1]=datum[3]
+	                date[2]=0
+	                date[3]=datum[0]
+	                datum = date.join('');
+	                console.log(datum)
+	            }
+	            
+		            if (datum[2]=='.') //datum v tvare 01.5.
+		            {
+		                var date = [0,0,0,0];
+		                date[0]=0;
+		                date[1]=datum[3]
+		                date[2]=datum[0]
+		                date[3]=datum[1]
+		                datum = date.join('');
+		                console.log(datum)
+		            }
+	            
+	        }
         }
-
-        if (datum.length==4)
-        {
-            if (datum[1]=='.') //datum v tvare 1.05
-            {
-                var date = [0,0,0,0];
-                date[0]=datum[2];
-                date[1]=datum[3]
-                date[2]=0
-                date[3]=datum[0]
-                datum = date.join('');
-                console.log(datum)
-            }
-            if (datum[2]=='.') //datum v tvare 01.5
-            {
-                var date = [0,0,0,0];
-                date[0]=0;
-                date[1]=datum[3]
-                date[2]=datum[0]
-                date[3]=datum[1]
-                datum = date.join('');
-                console.log(datum)
-            }
-        }
+	        
         
         
         //console.log(meno)
