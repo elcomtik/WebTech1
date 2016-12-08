@@ -2,160 +2,32 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <title>Projekt</title>
+    <title>Meniny</title>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
     <script src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/menu.js"></script>
+
+    <script src="http://www.kasman.sk/javascripty/date.1.js" type="text/javascript" language="JavaScript"></script>
 </head>
 
 <body onload="generuj_menu()">
-<nav id="navbar">
-</nav>
+	<div id="nav" class="row">
+	    <nav id="navbar"></nav>
+	    <ol id="breadcrumb" class="breadcrumb"></ol>
+	</div>
 
-<script>
-        
+	Zadaj meno:<input type="text" id="meno" ><button onclick="hladajDatum()">Hľadaj podľa mena</button><br><br>
+	Zadaj dátum:<input type="text" id="datum"><button onclick="hladajMeno()">Hľadaj podľa dátumu</button>
 
-function hladajDatum()
-{
-    var xmlDoc;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function()
-    {
-        if (this.readyState == 4 && this.status == 200)
-        {
-        najdiDatum(this);
-        }
-    }
-    xhttp.open("GET", "../data/meniny.xml", true);
-    xhttp.send();
-}
+	<h3 id="vysledok"></h3>
+	<!-- nasledujuci kod je pouzity z http://www.kasman.sk/javascript-meniny -->
+	Dnes je: <b><span id="date_den"></span></b>, <b><span id="dnes">dfh</span></b>, meniny oslavuje: <b><span id="date_meniny"></span></b>, zajtra meniny oslavuje: <b><span id="date_meniny_zajtra"></span></b>
 
-    function najdiDatum(xml)
-    {
-        xmlDoc = xml.responseXML;
-        //document.getElementById("vysledok").innerHTML =
-        //xmlDoc.getElementsByTagName("SK")[0].childNodes[0].nodeValue;
-        var i = 0;
-        var meno=document.getElementById("meno").value;
-        meno = meno.toLowerCase();
-        //console.log(meno)
-
-        var mena = xmlDoc.getElementsByTagName("zaznam");
-        for (var x = 0; x < mena.length; x++)
-        {
-            if(mena[x].getElementsByTagName("SK").length!==0)
-            {
-                var aaa = mena[x].getElementsByTagName("SK")[0].innerHTML;
-                //console.log(aaa)
-                var bbb = aaa.split(", ");
-                for (var y = 0; y < bbb.length; y++)
-                {
-                    bbb[y] = bbb[y].toLowerCase()
-                    if (meno==bbb[y]) {
-                        var datum = mena[x].getElementsByTagName("den")[0].innerHTML;
-                        document.getElementById("vysledok").innerHTML = datum.slice(2,4) + '.' + datum.slice(0,2);
-                        return
-                    }
-                }
-            }
-            i++;
-        }
-        document.getElementById("vysledok").innerHTML = "zadané meno sa nenašlo";
-}
-
-function hladajMeno()
-{
-    var xmlDoc;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function()
-    {
-        if (this.readyState == 4 && this.status == 200)
-        {
-        najdiMeno(this);
-        }
-    }
-    xhttp.open("GET", "../data/meniny.xml", true);
-    xhttp.send();
-}
-
-    function najdiMeno(xml)
-    {
-        xmlDoc = xml.responseXML;
-        //document.getElementById("vysledok").innerHTML =
-        //xmlDoc.getElementsByTagName("SK")[0].childNodes[0].nodeValue;
-        var i = 0;
-        var datum=document.getElementById("datum").value;
-        console.log(datum)
-        if (datum.length==5)//datum v tvare 12.04
-        {
-            var mesiac = datum.slice(3,5);
-            var den = datum.slice(0,2);
-            console.log(den)
-            console.log(mesiac)
-            datum=mesiac+den;
-            console.log(datum)
-        }
-
-        if (datum.length==3) //datum v tvare 3.4
-        {
-            var date = [0,0,0,0];
-            date[0]=0;
-            date[1]=datum[2]
-            date[2]=0
-            date[3]=datum[0]
-            datum = date.join('');
-            console.log(datum)
-        }
-
-        if (datum.length==4)
-        {
-            if (datum[1]=='.') //datum v tvare 1.05
-            {
-                var date = [0,0,0,0];
-                date[0]=datum[2];
-                date[1]=datum[3]
-                date[2]=0
-                date[3]=datum[0]
-                datum = date.join('');
-                console.log(datum)
-            }
-            if (datum[2]=='.') //datum v tvare 01.5
-            {
-                var date = [0,0,0,0];
-                date[0]=0;
-                date[1]=datum[3]
-                date[2]=datum[0]
-                date[3]=datum[1]
-                datum = date.join('');
-                console.log(datum)
-            }
-        }
-
-        //console.log(meno)
-        var vsetko = xmlDoc.getElementsByTagName("zaznam");
-        for (var x = 0; x < vsetko.length; x++)
-        {
-            if(vsetko[x].getElementsByTagName("SK").length!==0)
-            {
-                if(vsetko[x].getElementsByTagName("den")[0].innerHTML==datum)
-                {
-                    var datum = vsetko[x].getElementsByTagName("SK")[0].innerHTML;
-                    document.getElementById("vysledok").innerHTML = datum
-                    return
-                }
-            }
-            i++;
-        }
-        document.getElementById("vysledok").innerHTML = "v zadanom dátume nikto nemá meniny";
-}
-
-</script>
-Zadaj meno:<input type="text" id="meno" ><button onclick="hladajDatum()">Hľadaj podľa mena</button><br><br>
-Zadaj dátum:<input type="text" id="datum"><button onclick="hladajMeno()">Hľadaj podľa dátumu</button>
-<p id="vysledok"></p>
-<footer class="container-fluid text-center">
-    <p>Footer Text</p>
-</footer>
+  	<br>
+  	Aktuálny čas: <span id="date_time"></span>
+	<span id="kasman" hidden="true"><a href="http://www.kasman.sk/javascript">JavaScript</span>
+	<script src="../js/meniny.js"></script>
 </body>
 </html>
