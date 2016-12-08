@@ -14,7 +14,7 @@
 </nav>
 
 <script>
-        
+
 
 function hladajDatum()
 {
@@ -40,7 +40,7 @@ function hladajDatum()
         var meno=document.getElementById("meno").value;
         meno = meno.toLowerCase();
         //console.log(meno)
-        
+
         var mena = xmlDoc.getElementsByTagName("zaznam");
         for (var x = 0; x < mena.length; x++)
         {
@@ -57,7 +57,7 @@ function hladajDatum()
                         document.getElementById("vysledok").innerHTML = datum.slice(2,4) + '.' + datum.slice(0,2);
                         return
                     }
-                }   
+                }
             }
             i++;
         }
@@ -131,10 +131,10 @@ function hladajMeno()
                 console.log(datum)
             }
         }
-        
-        
+
+
         //console.log(meno)
-        
+
         var vsetko = xmlDoc.getElementsByTagName("zaznam");
         for (var x = 0; x < vsetko.length; x++)
         {
@@ -156,6 +156,8 @@ function hladajMeno()
 Zadaj meno:<input type="text" id="meno" ><button onclick="hladajDatum()">Hľadaj podľa mena</button><br><br>
 Zadaj dátum:<input type="text" id="datum"><button onclick="hladajMeno()">Hľadaj podľa dátumu</button>
 <p id="vysledok"></p>
-
+<footer class="container-fluid text-center">
+    <p>Footer Text</p>
+</footer>
 </body>
 </html>
