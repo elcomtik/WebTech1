@@ -32,7 +32,7 @@ function generate_breadcrumbs() {
 function generuj_menu() {
     var level1 = [
         {name : "Úvod", typ:0, ref:"/index.html"},
-        {name : "Technické pamiatky", typ:1, ref:""},
+        {name : "Technické pamiatky", typ:0, ref:"/html/pamiatky.html"},
         {name : "Mapa", typ:0, ref:"/html/g-mapa.html"},
         {name : "Kalendár", typ:0, ref:"/html/meniny.html"},
         {name : "Pripomienkovač", typ:0, ref:"/html/reminder.html"},
@@ -52,14 +52,14 @@ function generuj_menu() {
         {name:"Vysutá lanová dráha", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Gápeľ-Solivar Prešov", typ:0, ref:"", autor:"Erik Pribula"},
         {name:"Hvezdáreň Prešov", typ:0, ref:"", autor:"Erik Pribula"},
-        {name:"Zvolenský hrad", typ:0, ref:"/html/pamiatky-ls.html", autor:"Lukáš Šníder"},
-        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"/html/pamiatky-ls.html", autor:"Lukáš Šníder"},
+        {name:"Zvolenský hrad", typ:0, ref:"/html/pamiatky.html", autor:"Lukáš Šníder"},
+        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"/html/pamiatky.html", autor:"Lukáš Šníder"},
         {name:"Jazero mieru", typ:0, ref:"", autor:"Martin Meľuch"},
         {name:"Slávikov mlyn", typ:0, ref:"", autor:"Martin Meľuch"},
     ];
     var hry = [
         {name:"Čínske šachy", typ:0, ref:"", autor:"Roman Danko"},
-        {name:"Čísla", typ:0, ref:"", autor:"Adam Podhradský"},
+        {name:"Čísla", typ:0, ref:"/html/numbers.html", autor:"Adam Podhradský"},
         {name:"Hanojské veže", typ:0, ref:"",autor:"Erik Pribula"},
         {name:"Zemepisné puzzle", typ:0, ref:"", autor:"Lukáš Šníder"},
         {name:"Sudoku", typ:0, ref:"", autor:"Martin Meľuch"},

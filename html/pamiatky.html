@@ -5,12 +5,14 @@
     <title>Projekt</title>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="../css/style.css">
-    <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="../js/bootstrap.js"></script>
-    <script src="../js/menu.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/menu.js"></script>
 </head>
 
-<body >
+<body onload="generate_breadcrumbs()">
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -101,6 +103,8 @@
         </div>
     </div>
 </nav>
+<ol id="breadcrumb" class="breadcrumb"></ol>
+
 <div class="container-fluid bs-docs-grid">
 <div class="col-md-2"></div>
 
