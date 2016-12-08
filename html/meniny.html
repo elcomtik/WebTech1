@@ -5,19 +5,29 @@
     <title>Meniny</title>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
     <script src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
     <script src="../js/bootstrap.js"></script>
     <script src="../js/menu.js"></script>
-    <script src="../js/meniny.js"></script>
+  
+    <script src="http://www.kasman.sk/javascripty/date.1.js" type="text/javascript" language="JavaScript"></script>
 </head>
 
 <body onload="generuj_menu()">
-<nav id="navbar">
-</nav>
+	<div id="nav" class="row">
+	    <nav id="navbar"></nav>
+	    <ol id="breadcrumb" class="breadcrumb"></ol>
+	</div>
 
+	Zadaj meno:<input type="text" id="meno" ><button onclick="hladajDatum()">Hľadaj podľa mena</button><br><br>
+	Zadaj dátum:<input type="text" id="datum"><button onclick="hladajMeno()">Hľadaj podľa dátumu</button>
 
-Zadaj meno:<input type="text" id="meno" ><button onclick="hladajDatum()">Hľadaj podľa mena</button><br><br>
-Zadaj dátum:<input type="text" id="datum"><button onclick="hladajMeno()">Hľadaj podľa dátumu</button>
-<p id="vysledok"></p>
-
+	<h3 id="vysledok"></h3>
+	<!-- nasledujuci kod je pouzity z http://www.kasman.sk/javascript-meniny -->
+	Dnes je: <b><span id="date_den"></span></b>, <b><span id="dnes">dfh</span></b>, meniny oslavuje: <b><span id="date_meniny"></span></b>, zajtra meniny oslavuje: <b><span id="date_meniny_zajtra"></span></b>
+	
+  	<br>
+  	Aktuálny čas: <span id="date_time"></span>
+	<span id="kasman" hidden="true"><a href="http://www.kasman.sk/javascript">JavaScript</span>
+	<script src="../js/meniny.js"></script>
 </body>
 </html>

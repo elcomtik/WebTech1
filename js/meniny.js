@@ -1,3 +1,20 @@
+/*http://stackoverflow.com/questions/1531093/how-to-get-current-date-in-javascript */
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+if(dd<10)
+    dd='0'+dd
+
+if(mm<10)
+    mm='0'+mm
+
+today = dd+'.'+mm+'.'+yyyy;
+console.log(today);
+var dnes = document.getElementById("dnes");
+dnes.innerHTML = today;
+
 function hladajDatum()
 	{
 	    var xmlDoc;
@@ -13,37 +30,37 @@ function hladajDatum()
 	    xhttp.send();
 	}
 
-	    function najdiDatum(xml)
-	    {
-	        xmlDoc = xml.responseXML;
-	        //document.getElementById("vysledok").innerHTML =
-	        //xmlDoc.getElementsByTagName("SK")[0].childNodes[0].nodeValue;
-	        var i = 0;
-	        var meno=document.getElementById("meno").value;
-	        meno = meno.toLowerCase();
-	        //console.log(meno)
-	        
-	        var mena = xmlDoc.getElementsByTagName("zaznam");
-	        for (var x = 0; x < mena.length; x++)
-	        {
-	            if(mena[x].getElementsByTagName("SK").length!==0)
-	            {
-	                var aaa = mena[x].getElementsByTagName("SK")[0].innerHTML;
-	                //console.log(aaa)
-	                var bbb = aaa.split(", ");
-	                for (var y = 0; y < bbb.length; y++)
-	                {
-	                    bbb[y] = bbb[y].toLowerCase()
-	                    if (meno==bbb[y]) {
-	                        var datum = mena[x].getElementsByTagName("den")[0].innerHTML;
-	                        document.getElementById("vysledok").innerHTML = datum.slice(2,4) + '.' + datum.slice(0,2);
-	                        return
-	                    }
-	                }   
-	            }
-	            i++;
-	        }
-	        document.getElementById("vysledok").innerHTML = "zadané meno sa nenašlo";
+    function najdiDatum(xml)
+    {
+        xmlDoc = xml.responseXML;
+        //document.getElementById("vysledok").innerHTML =
+        //xmlDoc.getElementsByTagName("SK")[0].childNodes[0].nodeValue;
+        var i = 0;
+        var meno=document.getElementById("meno").value;
+        meno = meno.toLowerCase();
+        //console.log(meno)
+        
+        var mena = xmlDoc.getElementsByTagName("zaznam");
+        for (var x = 0; x < mena.length; x++)
+        {
+            if(mena[x].getElementsByTagName("SK").length!==0)
+            {
+                var aaa = mena[x].getElementsByTagName("SK")[0].innerHTML;
+                //console.log(aaa)
+                var bbb = aaa.split(", ");
+                for (var y = 0; y < bbb.length; y++)
+                {
+                    bbb[y] = bbb[y].toLowerCase()
+                    if (meno==bbb[y]) {
+                        var datum = mena[x].getElementsByTagName("den")[0].innerHTML;
+                        document.getElementById("vysledok").innerHTML = datum.slice(2,4) + '.' + datum.slice(0,2);
+                        return
+                    }
+                }   
+            }
+            i++;
+        }
+    	document.getElementById("vysledok").innerHTML = "zadané meno sa nenašlo";
 	}
 
 	function hladajMeno()
