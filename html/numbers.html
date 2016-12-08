@@ -35,7 +35,7 @@
 			var HEIGHT = 500;
 			var dragok = false;
 			var pocetbodov = 0;
-			var cislo = 5;
+			var cislo = Math.floor(Math.random() * 20) + 1;
 
 			function rect(x,y,w,h) {
 			 ctx.beginPath();
@@ -64,9 +64,18 @@
 
 				ctx.fillStyle = "#777777";
 				rect(20, 50, 100, 100);
+
+				ctx.font = "20px Verdana";
+				ctx.fillStyle = "#000000";
+				ctx.fillText("párne", 38, 110);
+				
 				ctx.fillStyle = "#777777";
 				rect(680, 50, 100, 100);
 
+				ctx.fillStyle = "#000000";
+				ctx.fillText("nepárne", 690, 110);
+
+				
 				ctx.fillStyle = "#FFFFFF";
 				
 				ctx.font = "30px Verdana";
@@ -105,28 +114,52 @@
 			{
 				dragok = false;
 				canvas.onmousemove = null;
-				if (x>20 && x<120 && y>50 && y<150)
+				if (x>20 && x<120 && y>50 && y<150) //lave vedierko
 				{
-					pocetbodov++;
-					console.log(pocetbodov);
-					document.getElementById("points").innerHTML=pocetbodov;
-					x=400-15;
-					y=460-15;
-				}
-				if (x>680 && x<780 && y>50 && y<150 )
-				{
-					pocetbodov-=2;
-					if (pocetbodov<0)
-					{
-						alert("Koniec hry !!");
-						pocetbodov=0;
+					if (cislo%2==0){
+						pocetbodov++;
+						console.log(pocetbodov);
+						document.getElementById("points").innerHTML=pocetbodov;
+						x=400-15;
+						y=460-15;
+						cislo = Math.floor(Math.random() * 20) + 1  
 					}
-					console.log(pocetbodov);
-					document.getElementById("points").innerHTML=pocetbodov;
-					x=400-15;
-					y=460-15;
+					else
+					{
+						pocetbodov-=2;
+						if (pocetbodov<0)
+						{
+							alert("Koniec hry !!");
+							pocetbodov=0;
+						}
+						document.getElementById("points").innerHTML=pocetbodov;
+						x=400-15;
+						y=460-15;
+					}
 				}
-
+				if (x>680 && x<780 && y>50 && y<150 ) //prave vedierko
+				{
+					if (cislo%2==1){
+						pocetbodov++;
+						console.log(pocetbodov);
+						document.getElementById("points").innerHTML=pocetbodov;
+						x=400-15;
+						y=460-15;
+						cislo = Math.floor(Math.random() * 20) + 1  
+					}
+					else
+					{
+						pocetbodov-=2;
+						if (pocetbodov<0)
+						{
+							alert("Koniec hry !!");
+							pocetbodov=0;
+						}
+						document.getElementById("points").innerHTML=pocetbodov;
+						x=400-15;
+						y=460-15;
+					}
+				}
 			}
 
 			init();
