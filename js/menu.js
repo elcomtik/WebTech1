@@ -1,3 +1,34 @@
+var webroot = "/WEBT1-projekt"; //treba zmenit podla hostingu, na ktory sa nasadzuje aplikacia
+
+$.cookie.json = true;
+
+function generate_breadcrumbs() {
+
+    //console.log(pHistory.toString());
+
+    var pHistory = $.cookie("pHistory");
+    if(pHistory === undefined){
+        pHistory = {items: []};
+    }
+    var bc = "";
+    //console.log(pHistory);
+
+    $.each( pHistory.items, function( key, value ) {
+        bc += "<li><a href='" + value.href + "'>" + value.title + "</a></li>";
+
+    });
+
+    bc += "<li class='active'>" + document.title + "</li>";
+    pHistory.items.push({href:  window.location.pathname, title: document.title});
+
+    if(pHistory.items.length > 4 ){
+        pHistory.items.shift();
+    }
+    $.cookie("pHistory", pHistory, { expires: 1, path: '/' });
+
+    document.getElementById("breadcrumb").innerHTML = bc;
+}
+
 function generuj_menu() {
     var level1 = [
         {name : "Úvod", typ:0, ref:"/index.html"},
@@ -55,14 +86,14 @@ function generuj_menu() {
     {
         if (level1[i].typ==0)
         {
-            list.innerHTML+='<li><a href="'+level1[i].ref+'">'+level1[i].name+' <span class="sr-only"></span></a></li>';
+            list.innerHTML+='<li><a href="'+webroot+level1[i].ref+'">'+level1[i].name+' <span class="sr-only"></span></a></li>';
         }
         else
         {
             p++;
             list.innerHTML+='<li class="dropdown" id="'+p+'"></li>';
             list_tmp1 = document.getElementById(p);
-            list_tmp1.innerHTML+='<a href="'+level1[i].ref+'" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'+level1[i].name+' <span class="caret"></span></a>';
+            list_tmp1.innerHTML+='<a href="'+webroot+level1[i].ref+'" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'+level1[i].name+' <span class="caret"></span></a>';
             p++;
             list_tmp1.innerHTML+='<ul class="dropdown-menu" id="'+p+'"></ul>';
             list_tmp2 = document.getElementById(p);
@@ -80,7 +111,7 @@ function generuj_menu() {
                     for(k=0;k<pamiaty.length;k++)
                         if (pamiaty[k].autor==autori[j].name)
                         {
-                            list_tmp4.innerHTML+='<li><a tabindex="-1" href="'+pamiaty[k].ref+'">'+pamiaty[k].name+' </a></li>';
+                            list_tmp4.innerHTML+='<li><a tabindex="-1" href="'+webroot+pamiaty[k].ref+'">'+pamiaty[k].name+' </a></li>';
                         }
                 }
             }
@@ -88,7 +119,7 @@ function generuj_menu() {
             {
                 for(j=0;j<hry.length;j++)
                 {
-                    list_tmp2.innerHTML+=' <li><a tabindex="-1" href="'+hry[j].ref+'">'+hry[j].name+' </a></li>';
+                    list_tmp2.innerHTML+=' <li><a tabindex="-1" href="'+webroot+hry[j].ref+'">'+hry[j].name+' </a></li>';
                 }
             }
             if (level1[i].name=="Autori")
@@ -106,18 +137,20 @@ function generuj_menu() {
                     {
                         if (pamiaty[k].autor==autori[j].name)
                         {
-                            list_tmp4.innerHTML+='<li><a tabindex="-1" href="'+pamiaty[k].ref+'">'+pamiaty[k].name+' </a></li>';
+                            list_tmp4.innerHTML+='<li><a tabindex="-1" href="'+webroot+pamiaty[k].ref+'">'+pamiaty[k].name+' </a></li>';
                         }
                     }
                     for(k=0;k<hry.length;k++)
                     {
                         if (hry[k].autor==autori[j].name)
-                            list_tmp4.innerHTML+=' <li><a tabindex="-1" href="'+hry[k].ref+'">'+hry[k].name+' </a></li>';
+                            list_tmp4.innerHTML+=' <li><a tabindex="-1" href="'+webroot+hry[k].ref+'">'+hry[k].name+' </a></li>';
                     }
                 }
 
             }
         }
     }
+
+    generate_breadcrumbs();
 }
 
