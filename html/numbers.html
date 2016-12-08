@@ -8,6 +8,8 @@
 		<link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
 	</head>
 	<body onload="generuj_menu()">
+	<!-- http://html5.litten.com/how-to-drag-and-drop-on-an-html5-canvas/
+	bol pouzity tento zdroj ako zaklad pre drag&drop funkcionalitu -->
 	<nav id="navbar"></nav>
 
 		<h3>Návod na ovládanie:</h3>
@@ -21,16 +23,12 @@
 				</ul>
 			</li>
 		</ol>
-
 		
+		<canvas id="canvas" width="800" height="500">
+		This text is displayed if your browser does not support HTML5 Canvas.
+		</canvas>
 		
-			<canvas id="canvas" width="800" height="500">
-			This text is displayed if your browser does not support HTML5 Canvas.
-			</canvas>
-		
-<script type="text/javascript" src="../js/numbers.js"></script>
-		
-		
+		<script type="text/javascript" src="../js/numbers.js"></script>
 
 		<p>Aktuálny počet bodov: <div id="points">0</div></p>
 		<p>Maximálny počet bodov: <div id="maximum">0</div></p>
