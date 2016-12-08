@@ -1,4 +1,4 @@
-var webroot = "/WEBT1-projekt"; //treba zmenit podla hostingu, na ktory sa nasadzuje aplikacia
+var webroot = ""; //treba zmenit podla hostingu, na ktory sa nasadzuje aplikacia
 
 $.cookie.json = true;
 
