@@ -31,11 +31,10 @@ function generate_breadcrumbs() {
 
 function generuj_menu() {
     var level1 = [
-        {name : "Úvod", typ:0, ref:"/index.html"},
+        {name : "Úvod", typ:0, ref:"index.html"},
         {name : "Technické pamiatky", typ:1, ref:""},
-        {name : "Mapa", typ:0, ref:"/html/g-mapa.html"},
-        {name : "Kalendár", typ:0, ref:"/html/meniny.html"},
-        {name : "Pripomienkovač", typ:0, ref:"/html/reminder.html"},
+        {name : "Kalendár", typ:0, ref:""},
+        {name : "Pripomienkovač", typ:0, ref:""},
         {name : "Hry", typ:1, ref:""},
         {name : "Autori", typ:1, ref:""}];
 
@@ -47,13 +46,13 @@ function generuj_menu() {
         {name:"Martin Meľuch", typ:1, ref:""}];
     var pamiaty = [
         {name:"Železiareň Františková Huta", typ:0, ref:"", autor:"Roman Danko"},
-        {name:"Kysucko-Oravská lesná úvraťová železnica", typ:0, ref:"", autor:"Roman Danko"},
+        {name:"Železnica Oravská Lesná", typ:0, ref:"", autor:"Roman Danko"},
         {name:"Čiernohronská železnica", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Vysutá lanová dráha", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Gápeľ-Solivar Prešov", typ:0, ref:"", autor:"Erik Pribula"},
         {name:"Hvezdáreň Prešov", typ:0, ref:"", autor:"Erik Pribula"},
-        {name:"Zvolenský hrad", typ:0, ref:"/html/pamiatky-ls.html", autor:"Lukáš Šníder"},
-        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"/html/pamiatky-ls.html", autor:"Lukáš Šníder"},
+        {name:"Zvolenský hrad", typ:0, ref:"", autor:"Lukáš Šníder"},
+        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"", autor:"Lukáš Šníder"},
         {name:"Jazero mieru", typ:0, ref:"", autor:"Martin Meľuch"},
         {name:"Slávikov mlyn", typ:0, ref:"", autor:"Martin Meľuch"},
     ];
@@ -61,18 +60,17 @@ function generuj_menu() {
         {name:"Čínske šachy", typ:0, ref:"", autor:"Roman Danko"},
         {name:"Čísla", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Hanojské veže", typ:0, ref:"",autor:"Erik Pribula"},
-        {name:"Zemepisné puzzle", typ:0, ref:"", autor:"Lukáš Šníder"},
-        {name:"Sudoku", typ:0, ref:"", autor:"Martin Meľuch"},
+        {name:"Sudoku", typ:0, ref:"", autor:"Lukáš Šníder"},
+        {name:"Zemepisné puzzle", typ:0, ref:"", autor:"Martin Meľuch"},
     ];
 
     var navbar = document.getElementById("navbar");
     navbar.className+="navbar navbar-default";
     navbar.innerHTML+='<div class="container-fluid" id="container"></div>';
     var container = document.getElementById("container");
-    container.innerHTML+= "<div id='nav_header'> </div>";
+    container.innerHTML+= "<div class='navbar-header' id='nav_header'> </div>";
     var navheader = document.getElementById('nav_header');
-    navheader.innerHTML+='<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></button>';
-    navheader.innerHTML+='<a class="navbar-brand" href="#">WebTech</a>';
+    navheader.innerHTML+='<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#container_list" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">Názov</a>';
     container.innerHTML+='<div class="collapse navbar-collapse" id="container_list"></div>';
     var container_list = document.getElementById("container_list");
     container_list.innerHTML+='<ul class="nav navbar-nav" id="list"></ul>';
@@ -150,7 +148,5 @@ function generuj_menu() {
             }
         }
     }
-
-    generate_breadcrumbs();
 }
 
