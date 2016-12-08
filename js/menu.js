@@ -148,5 +148,7 @@ function generuj_menu() {
             }
         }
     }
+
+    generate_breadcrumbs();
 }
 
