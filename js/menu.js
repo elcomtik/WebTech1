@@ -31,10 +31,11 @@ function generate_breadcrumbs() {
 
 function generuj_menu() {
     var level1 = [
-        {name : "Úvod", typ:0, ref:"index.html"},
+        {name : "Úvod", typ:0, ref:"/index.html"},
         {name : "Technické pamiatky", typ:1, ref:""},
-        {name : "Kalendár", typ:0, ref:""},
-        {name : "Pripomienkovač", typ:0, ref:""},
+        {name : "Mapa", typ:0, ref:"/html/g-mapa.html"},
+        {name : "Kalendár", typ:0, ref:"/html/meniny.html"},
+        {name : "Pripomienkovač", typ:0, ref:"/html/reminder.html"},
         {name : "Hry", typ:1, ref:""},
         {name : "Autori", typ:1, ref:""}];
 
@@ -46,13 +47,13 @@ function generuj_menu() {
         {name:"Martin Meľuch", typ:1, ref:""}];
     var pamiaty = [
         {name:"Železiareň Františková Huta", typ:0, ref:"", autor:"Roman Danko"},
-        {name:"Železnica Oravská Lesná", typ:0, ref:"", autor:"Roman Danko"},
+        {name:"Kysucko-Oravská lesná úvraťová železnica", typ:0, ref:"", autor:"Roman Danko"},
         {name:"Čiernohronská železnica", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Vysutá lanová dráha", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Gápeľ-Solivar Prešov", typ:0, ref:"", autor:"Erik Pribula"},
         {name:"Hvezdáreň Prešov", typ:0, ref:"", autor:"Erik Pribula"},
-        {name:"Zvolenský hrad", typ:0, ref:"", autor:"Lukáš Šníder"},
-        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"", autor:"Lukáš Šníder"},
+        {name:"Zvolenský hrad", typ:0, ref:"/html/pamiatky-ls.html", autor:"Lukáš Šníder"},
+        {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"/html/pamiatky-ls.html", autor:"Lukáš Šníder"},
         {name:"Jazero mieru", typ:0, ref:"", autor:"Martin Meľuch"},
         {name:"Slávikov mlyn", typ:0, ref:"", autor:"Martin Meľuch"},
     ];
@@ -60,9 +61,10 @@ function generuj_menu() {
         {name:"Čínske šachy", typ:0, ref:"", autor:"Roman Danko"},
         {name:"Čísla", typ:0, ref:"", autor:"Adam Podhradský"},
         {name:"Hanojské veže", typ:0, ref:"",autor:"Erik Pribula"},
-        {name:"Sudoku", typ:0, ref:"", autor:"Lukáš Šníder"},
-        {name:"Zemepisné puzzle", typ:0, ref:"", autor:"Martin Meľuch"},
+        {name:"Zemepisné puzzle", typ:0, ref:"", autor:"Lukáš Šníder"},
+        {name:"Sudoku", typ:0, ref:"", autor:"Martin Meľuch"},
     ];
+
 
     var navbar = document.getElementById("navbar");
     navbar.className+="navbar navbar-default";
