@@ -1,4 +1,33 @@
-var webroot = ""; //treba zmenit podla hostingu, na ktory sa nasadzuje aplikacia
+var webroot = "/WEBT1-projekt"; //treba zmenit podla hostingu, na ktory sa nasadzuje aplikacia
+
+$.cookie.json = true;
+
+function generate_breadcrumbs() {
+
+    //console.log(pHistory.toString());
+
+    var pHistory = $.cookie("pHistory");
+    if(pHistory === undefined){
+        pHistory = {items: []};
+    }
+    var bc = "";
+    //console.log(pHistory);
+
+    $.each( pHistory.items, function( key, value ) {
+        bc += "<li><a href='" + value.href + "'>" + value.title + "</a></li>";
+
+    });
+
+    bc += "<li class='active'>" + document.title + "</li>";
+    pHistory.items.push({href:  window.location.pathname, title: document.title});
+
+    if(pHistory.items.length > 4 ){
+        pHistory.items.shift();
+    }
+    $.cookie("pHistory", pHistory, { expires: 1, path: '/' });
+
+    document.getElementById("breadcrumb").innerHTML = bc;
+}
 
 function generuj_menu() {
     var level1 = [
@@ -121,5 +150,7 @@ function generuj_menu() {
             }
         }
     }
+
+    generate_breadcrumbs();
 }
 
