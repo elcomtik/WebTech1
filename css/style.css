@@ -1,0 +1,15 @@
+footer {
+  background-color: #555;
+  color: white;
+  padding: 25px;
+}
+
+#pam-zv, #pamiatka1 {
+  border: '3px solid black';
+  background-color: beige;
+}
+
+#pam-bs, #pamiatka2 {
+  border: none;
+  background-color: grey;
+}
