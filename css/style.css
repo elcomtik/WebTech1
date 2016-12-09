@@ -22,3 +22,22 @@ h2 {
   background-color: grey;
   height: 100%;
 }
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;!important;
+    left: 100%;!important;
+    margin-top: -1px;!important;
+}
+
+.caret-right {
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-left: 4px solid;
+    display: inline-block;
+    height: 0;
+    width: 0;
+}
