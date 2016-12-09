@@ -86,50 +86,111 @@ function hladajDatum()
 	        var i = 0;
 	        var datum=document.getElementById("datum").value;
 	        console.log(datum)
+	        if (datum.length<4)
+	        {
+				document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+    			return;
+	        }
+
+	        var patt = new RegExp("^[0-3]?[0-9]?\.[0-9]?[0-9]?\.$");
+    		var res = patt.test(datum);
+    		if (res==false)
+    		{
+    			document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+    			return;
+    		}
+
 	        if (datum.length==6)//datum v tvare 12.04.
 	        {
+	        	if (datum[2]!='.' && datum[5]!='.')
+	        	{
+	        		document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+    				return;
+	        	}
 	            var mesiac = datum.slice(3,5);
 	            var den = datum.slice(0,2);
-	            console.log(den);
-	            console.log(mesiac);
+	            if (den>31 || mesiac>12)
+	            {
+	            	document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+    				return;
+	            }
+	            //console.log(den);
+	            //console.log(mesiac);
 	            datum=mesiac+den;
-	            console.log(datum);
+	            //console.log(datum);
 			}
 	        else
 	        {
 		        if (datum.length==4) //datum v tvare 3.4.
 		        {
+		        	if (datum[1]!='.' && datum[3]!='.')
+		        	{
+		        		document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+	    				return;
+		        	}
 		            var date = [0,0,0,0];
 		            date[0]=0;
 		            date[1]=datum[2];
 		            date[2]=0;
 		            date[3]=datum[0];
 		            datum = date.join('');
-		            console.log(datum);
+		            var mesiac = datum.slice(3,5);
+		            var den = datum.slice(0,2);
+		            if (den>31 || mesiac>12)
+		            {
+		            	document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+	    				return;
+		            }
+		            //console.log(datum);
 		        }
 		       
 		        if (datum.length==5)
 		        {
 		            if (datum[1]=='.') //datum v tvare 1.05.
 		            {
+		            	if (datum[1]!='.' && datum[4]!='.')
+			        	{
+			        		document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+		    				return;
+			        	}
 		                var date = [0,0,0,0];
 		                date[0]=datum[2];
 		                date[1]=datum[3]
 		                date[2]=0
 		                date[3]=datum[0]
 		                datum = date.join('');
-		                console.log(datum)
+		                var den = datum.slice(3,5);
+			            var mesiac = datum.slice(0,2);
+			            console.log(mesiac);
+			            if (den>31 || mesiac>12)
+			            {
+			            	document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+		    				return;
+			            }
+		                //console.log(datum)
 		            }
 		            
 			            if (datum[2]=='.') //datum v tvare 01.5.
 			            {
+			            	if (datum[2]!='.' && datum[4]!='.')
+				        	{
+				        		document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+			    				return;
+				        	}
 			                var date = [0,0,0,0];
 			                date[0]=0;
 			                date[1]=datum[3]
 			                date[2]=datum[0]
 			                date[3]=datum[1]
 			                datum = date.join('');
-			                console.log(datum)
+			                var mesiac = datum.slice(3,5);
+				            var den = datum.slice(0,2);
+				            if (den>31 || mesiac>12)
+				            {
+				            	document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
+			    				return;
+				            }
+			                //console.log(datum)
 			            }
 		            
 		        }
