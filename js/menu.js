@@ -124,4 +124,14 @@ function generuj_menu() {
     }
 
     generate_breadcrumbs();
+    generate_popups();
+}
+
+function generate_popups() {
+
+        $('.dropdown-submenu a.test').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
 }
