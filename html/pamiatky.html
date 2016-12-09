@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Projekt</title>
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../css/equal-height-columns.css">
     <link type="text/css" rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../js/jquery.cookie.js"></script>
@@ -11,19 +12,23 @@
     <script type="text/javascript" src="../js/menu.js"></script>
 </head>
 
-<body onload="generuj_menu(); generate_breadcrumbs()">
-<nav id="navbar">
-</nav>
-<ol id="breadcrumb" class="breadcrumb"></ol>
+<body onload="generuj_menu();">
+
+<div id="nav" class="row">
+    <nav id="navbar"></nav>
+    <ol id="breadcrumb" class="breadcrumb"></ol>
+</div>
+
 <div class="jumbotron">
     <div class="container text-center">
         <h1>Technické pamiatky Slovenska</h1>
     </div>
 </div>
+
 <div class="container-fluid bs-docs-grid">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <div class="row show-grid">
+        <div class="row row-eq-height show-grid">
             <div class="col-md-6 col-xs-12 pam-left">
                 <h2>Hradná studňa</h2>
                 <figure>
@@ -73,7 +78,7 @@
                 </p>
             </div>
         </div>
-        <div class="row show-grid">
+        <div class="row row-eq-height show-grid">
             <div class="col-md-6 col-xs-12 pam-left">
                 <h2>Čierny Balog - Vydrovo</h2>
                 <figure>
@@ -100,7 +105,7 @@
                 </p>
             </div>
         </div>
-        <div class="row show-grid">
+        <div class="row row-eq-height show-grid">
             <div class="col-md-6 col-xs-12 pam-left">
                 <h2>Františkova huta</h2>
                 <figure>
@@ -132,7 +137,7 @@
                 </p>
             </div>
         </div>
-        <div class="row show-grid">
+        <div class="row row-eq-height show-grid">
             <div class="col-md-6 col-xs-12 pam-left">
                 <h2>Úhornianske jazero - Jazero mieru</h2>
                 <figure>
@@ -171,7 +176,7 @@
                 </p>
             </div>
         </div>
-        <div class="row show-grid">
+        <div class="row row-eq-height show-grid">
             <div class="col-md-6 col-xs-12 pam-left">
                 <h2>Gápeľ-Solivar Prešov</h2>
                 <figure>
