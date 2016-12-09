@@ -1,0 +1,64 @@
+{
+  "pamiatky": [
+    {
+      "nazov": "Hradná studňa",
+      "rokVzniku": "1382",
+      "sirka": "48.5762",
+      "dlzka": "19.1371"
+    },
+    {
+      "nazov": "Glanzenberg",
+      "rokVzniku": "1560",
+      "sirka": "48.4496",
+      "dlzka": "18.9087"
+    },
+    {
+      "nazov": "Františkova huta",
+      "rokVzniku": "1836",
+      "sirka": "49.297743",
+      "dlzka": "19.507890"
+    },
+    {
+      "nazov": "Kysucko-Oravská lesná úvraťová železnica",
+      "rokVzniku": "1926",
+      "sirka": "49.385448",
+      "dlzka": "19.161269"
+    },
+    {
+      "nazov": "Gápeľ´-Solivar Prešov",
+      "rokVzniku": "17.st",
+      "sirka": "48.976679",
+      "dlzka": "21.278688"
+    },
+    {
+      "nazov": "Parná elekráreň Žilina",
+      "rokVzniku": "1908",
+      "sirka": "49.224109",
+      "dlzka": "18.743320"
+    },
+    {
+      "nazov": "železničná stanica Vydrovo",
+      "rokVzniku": "1908",
+      "sirka": "48.733605",
+      "dlzka": "19.643853"
+    },
+    {
+      "nazov": "medzistanica VLD Štart",
+      "rokVzniku": "1939",
+      "sirka": "49.187670",
+      "dlzka": "20.233100"
+    },
+    {
+      "nazov": "Slávikov mlyn v Šaci",
+      "rokVzniku": "19.st",
+      "sirka": "48.631490",
+      "dlzka": "21.165762"
+    },
+    {
+      "nazov": "Jazero mieru, nádrž Úhorná",
+      "rokVzniku": "1768",
+      "sirka": "48.708670",
+      "dlzka": "20.694670"
+    }
+  ]
+}

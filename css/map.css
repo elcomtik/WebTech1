@@ -1,0 +1,22 @@
+/**
+ * Created by rdanko on 30.11.2016.
+ */
+
+body{
+    overflow: hidden;
+}
+
+#map {
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: 60vh;
+    margin: auto;
+}
+#timeline{
+  display: block;
+  position: relative;
+  width: 100vw;
+  height: 20vh;
+  margin: auto;
+}

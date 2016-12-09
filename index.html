@@ -1,23 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <title>Projekt</title>
-      <script src="js/jquery-3.1.1.min.js"></script>
-      <script src="js/Cookies.js"></script>
-      <script src="js/visitCounter.js"></script>
-  </head>
-  <body>
-    <h1>Ahoj svet!</h1>
-    <br>
-    <cite>Vytvoril som hosting pre nasu stranku, vytvoril kostru projektu, pripravil git repozitar
-        https://github.com/elcomtik/WebTech1, a pushnul prve data. Naklunujte si repozitar, pracujte na projekte lokalne a v
-        pripade ze budete mat svoju pracu hotovu mergnite to s mastrom na serveri a nasledne pushnite. Data sa automaticky
-        uploadnu na hostnigovy server. PS: prosim necommitujte zlozku .idea/ </cite><br><br>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Úvod</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+</head>
+<body onload="generuj_menu()">
+<div id="nav" class="row">
+    <nav id="navbar"></nav>
+    <ol id="breadcrumb" class="breadcrumb"></ol>
+</div>
 
-    <b>Roman</b>
-    <div id="counter"></div>
-    <script language="javascript">checkVisitsCookie();</script>
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Vitajte na našej stránke!</h1>
+    <p>Veríme že sa Vám bude páčiť.</p>
+  </div>
+</div>
 
-  </body>
+<div id="footer" class="navbar navbar-fixed-bottom">
+    <footer class="container-fluid text-center">
+        <p>Webové technológie 2016/2017</p>
+        <span id="counter"></span>
+    </footer>
+</div>
+
+</body>
 </html>

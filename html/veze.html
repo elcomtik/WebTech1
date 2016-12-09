@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hanojské veže</title>
+    <link rel="stylesheet" href="../css/style_veze.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script rel="script" src="../js/jquery-3.1.1.min.js"></script>
+    <script rel="script" src="../js/jquery.cookie.js"></script>
+    <script rel="script" src="../js/bootstrap.js"></script>
+    <script rel="script" src="../js/menu.js"></script>
+    
+</head>
+<body onload="generuj_menu()">
+<div id="nav" class="row">
+<nav id="navbar">
+</nav>
+<ol id="breadcrumb" class="breadcrumb"></ol>
+</div>
+
+<section>
+    <div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+            <input type="text" class="form-control" id="usr" placeholder="Name">
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <select class="form-control" id="sel1">
+                <option selected disabled value=0>Select difficulty</option>
+                <option value=3>Easy</option>
+                <option value=5>Medium</option>
+                <option value=7>Hard</option>
+            </select>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+            <button class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" onclick="begin_game()">Start</button>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+            <h3><span class="label label-primary col-lg-12 col-md-12 col-sm-12 col-xs-12"><span class="glyphicon glyphicon-time" aria-hidden="true" id="best_time">-</span></span></h3>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+            <h3><span class="label label-info col-lg-12 col-md-12 col-sm-12 col-xs-12"><span class="glyphicon glyphicon-time" aria-hidden="true" id="time">0s</span></span></h3>
+            Hra začína zo všetkými kameňmi na 1. tyčke. Úlohou hráča je potom presunúť celú pyramídu na 3. tyčku, avšak pri dodržaní nasledovných pokynov:<br>
+            - v jednom ťahu (na jedenkrát) je možné premiestniť iba jeden hrací kameň<br>
+            - väčší kameň nesmie byť nikdy položený na menší<br>
+            - cieľom hry je premiestniť kamene na 3. tyčku v čo najkratšom čase<br>
+            - najlepší dosiahnutý výsledok je zobrazený v tmavo modrom políčku<br>
+        </div>
+    </div>
+    <div>
+        <canvas id="canvas"></canvas>
+    </div>
+
+
+</section>
+<script rel="script" src="../js/script_veze.js"></script>
+</body>
+</html>

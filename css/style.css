@@ -1,0 +1,41 @@
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+
+.navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+h2 {
+  height: 70px;
+}
+
+.pam-right {
+  background-color: beige;
+}
+
+.pam-left {
+  background-color: grey;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;!important;
+    left: 100%;!important;
+    margin-top: -1px;!important;
+}
+
+.caret-right {
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-left: 4px solid;
+    display: inline-block;
+    height: 0;
+    width: 0;
+}
