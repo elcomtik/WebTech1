@@ -390,3 +390,5 @@ function get_result() {
 
 
 }
+
+get_result();
