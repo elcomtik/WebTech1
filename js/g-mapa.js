@@ -16,20 +16,20 @@ function initializeMap() {
     map = new google.maps.Map(mapCanvas, mapOptions);
     var id = 0;
     //vykresli markery pre pamiatky z ext. JSON suboru. Realizovane pomocou jQuery funkcie
-    $.getJSON( "../data/pamiatky.json", function( json ) {
+    $.getJSON("../data/pamiatky.json", function (json) {
 
-        $.each( json.pamiatky, function( key, pam ) {
+        $.each(json.pamiatky, function (key, pam) {
 
             //console.log(pam.nazov);
-            var pos = new google.maps.LatLng(pam.sirka,pam.dlzka);
+            var pos = new google.maps.LatLng(pam.sirka, pam.dlzka);
             markersData[id] = new google.maps.Marker({
                 position: pos,
                 map: map,
                 title: pam.nazov + "\nVznik: " + pam.rokVzniku
             });
             markersData[id].setMap(map);
-            markersData[id].addListener('click', function(){
-              focusOnDate(markersData.indexOf(this)+1);
+            markersData[id].addListener('click', function () {
+                focusOnDate(markersData.indexOf(this) + 1);
             })
             id++;
         });
@@ -39,6 +39,14 @@ function initializeMap() {
 google.maps.event.addDomListener(window, "load", initializeMap);
 
 function focusOnMap(id) {
-  map.setZoom(14);
-  map.setCenter(markersData[id-1].getPosition());
+    map.setZoom(9);
+    map.setCenter(markersData[id - 1].getPosition());
+
+    $.each(markersData, function (key, m) {
+        m.setAnimation(null);
+    });
+
+    window.setTimeout(function () {
+        markersData[id - 1].setAnimation(google.maps.Animation.BOUNCE);
+    }, 5000);
 }
