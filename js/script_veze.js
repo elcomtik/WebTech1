@@ -1,3 +1,4 @@
+document.getelementById("best_time").addEventListener("load", get_result);
 var canvas;
 var ctx;
 var x;
@@ -390,4 +391,3 @@ function get_result() {
 
 
 }
-get_result();
