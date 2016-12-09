@@ -60,7 +60,7 @@ function generuj_menu() {
     var hry = [
         {name:"Čínske šachy", typ:0, ref:"", autor:"Roman Danko"},
         {name:"Čísla", typ:0, ref:"/html/numbers.html", autor:"Adam Podhradský"},
-        {name:"Hanojské veže", typ:0, ref:"",autor:"Erik Pribula"},
+        {name:"Hanojské veže", typ:0, ref:"/html/veze.html",autor:"Erik Pribula"},
         {name:"Zemepisné puzzle", typ:0, ref:"", autor:"Lukáš Šníder"},
         {name:"Sudoku", typ:0, ref:"", autor:"Martin Meľuch"},
     ];
