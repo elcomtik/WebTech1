@@ -55,5 +55,5 @@ window.onload = initializeTime;
 
 function focusOnDate(id) {
   if(timeline)
-    timeline.setSelection(id, {focus: focus.checked});
+    timeline.setSelection(id, {focus: true});
 }
