@@ -387,6 +387,10 @@ function get_result() {
     {
         document.getElementById("best_time").innerHTML = localStorage.besttime+'s';
     }
+    else
+    {
+        document.getElementById("best_time").innerHTML = best_time+'s';
+    }
 
 
 }

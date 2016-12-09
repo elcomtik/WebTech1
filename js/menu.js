@@ -46,16 +46,16 @@ function generuj_menu() {
         {name:"Lukáš Šníder", typ:1, ref:""},
         {name:"Martin Meľuch", typ:1, ref:""}];
     var pamiaty = [
-        {name:"Železiareň Františková Huta", typ:0, ref:"", autor:"Roman Danko"},
-        {name:"Kysucko-Oravská lesná úvraťová železnica", typ:0, ref:"", autor:"Roman Danko"},
-        {name:"Čiernohronská železnica", typ:0, ref:"", autor:"Adam Podhradský"},
-        {name:"Vysutá lanová dráha", typ:0, ref:"", autor:"Adam Podhradský"},
-        {name:"Gápeľ-Solivar Prešov", typ:0, ref:"", autor:"Erik Pribula"},
-        {name:"Parná elektráreň Žilina", typ:0, ref:"", autor:"Erik Pribula"},
+        {name:"Železiareň Františková Huta", typ:0, ref:"/html/pamiatky.html", autor:"Roman Danko"},
+        {name:"Kysucko-Oravská lesná úvraťová železnica", typ:0, ref:"/html/pamiatky.html", autor:"Roman Danko"},
+        {name:"Čiernohronská železnica", typ:0, ref:"/html/pamiatky.html", autor:"Adam Podhradský"},
+        {name:"Vysutá lanová dráha", typ:0, ref:"/html/pamiatky.html", autor:"Adam Podhradský"},
+        {name:"Gápeľ-Solivar Prešov", typ:0, ref:"/html/pamiatky.html", autor:"Erik Pribula"},
+        {name:"Parná elektráreň Žilina", typ:0, ref:"/html/pamiatky.html", autor:"Erik Pribula"},
         {name:"Zvolenský hrad", typ:0, ref:"/html/pamiatky.html", autor:"Lukáš Šníder"},
         {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"/html/pamiatky.html", autor:"Lukáš Šníder"},
-        {name:"Jazero mieru", typ:0, ref:"", autor:"Martin Meľuch"},
-        {name:"Slávikov mlyn", typ:0, ref:"", autor:"Martin Meľuch"},
+        {name:"Jazero mieru", typ:0, ref:"/html/pamiatky.html", autor:"Martin Meľuch"},
+        {name:"Slávikov mlyn", typ:0, ref:"/html/pamiatky.html", autor:"Martin Meľuch"},
     ];
     var hry = [
         {name:"Čínske šachy", typ:0, ref:"", autor:"Roman Danko"},
