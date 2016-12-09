@@ -67,7 +67,7 @@ function generuj_menu() {
 
 
     var navbar = document.getElementById("navbar");
-    navbar.className+="navbar navbar-default";
+    navbar.className+="navbar navbar-inverse";
     navbar.innerHTML+='<div class="container-fluid" id="container"></div>';
     var container = document.getElementById("container");
     container.innerHTML+= "<div class='navbar-header' id='nav_header'> </div>";
@@ -153,4 +153,3 @@ function generuj_menu() {
 
     generate_breadcrumbs();
 }
-
