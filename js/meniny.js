@@ -53,7 +53,7 @@ function hladajDatum()
                     bbb[y] = bbb[y].toLowerCase()
                     if (meno==bbb[y]) {
                         var datum = mena[x].getElementsByTagName("den")[0].innerHTML;
-                        document.getElementById("vysledok").innerHTML = datum.slice(2,4) + '.' + datum.slice(0,2);
+                        document.getElementById("vysledok").innerHTML = datum.slice(2,4) + '.' + datum.slice(0,2) + '.';
                         return
                     }
                 }   
