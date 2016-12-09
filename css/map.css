@@ -9,7 +9,7 @@ body{
 #map {
     position: relative;
     display: block;
-    width: 90vw;
+    width: 100vw;
     height: 60vh;
     margin: auto;
 }
