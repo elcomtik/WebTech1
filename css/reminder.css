@@ -1,9 +1,4 @@
-#notes-list {
-  width: 70%;
-  float: right;
-}
-
-#note-add-new {
-  width: 30%;
-  float: left;
+.close {
+  font-size: 22pt;
+  padding-right: 5px;
 }

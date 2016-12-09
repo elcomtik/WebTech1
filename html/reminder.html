@@ -20,33 +20,35 @@
 
 <div id="main">
     <div class="box-background">
-        <div id="notes-list" class="container">
-            <h3>Zoznam Pripomienok</h3>
-            <div class="reminder-notes">
-                <div class="panel panel-default">
-                    <span class="close" onclick="deleteNote(this)">&times;</span>
-                    <div class="panel-heading">Title</div>
-                    <div class="panel-body">Content</div>
-                </div>
-            </div>
-        </div>
-        <div id="note-add-new" class="container">
-            <h3>Nová Pripomienka</h3>
-            <form name="add-form" class="form-horizontal">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="note-name">Názov:</label>
-                    <div class="col-sm-10">
-                        <input type="text" id="note-name" class="form-control"/>
-                        <p id="name"></p><br/>
-                    </div>
-                    <label class="col-sm-2 control-label" for="note-name">Popis:</label>
-                    <div class="col-sm-10">
-                        <textarea id="note-content" class="form-control"></textarea><br/>
-                    </div>
-                    <input type="button" class="btn btn-primary" value="Zadaj pripomienku" onclick="saveNote()">
-                </div>
-            </form>
-        </div>
+      <div class="col-md-2"></div>
+      <div id="note-add-new" class="container col-md-3">
+          <h3>Nová Pripomienka</h3>
+          <form name="add-form" class="form-horizontal">
+              <div class="form-group">
+                  <label class="col-md-2 control-label" for="note-name">Názov:</label>
+                  <div class="col-md-10">
+                      <input type="text" id="note-name" class="form-control" data-toggle="tooltip" title="Treba vyplniť!">
+                      <p id="name"></p><br/>
+                  </div>
+                  <label class="col-md-2 control-label" for="note-name">Popis:</label>
+                  <div class="col-md-10">
+                      <textarea id="note-content" class="form-control" rows="5" data-toggle="tooltip" title="Treba vyplniť!"></textarea><br/>
+                  </div>
+                  <input type="button" class="btn btn-primary col-md-offset-1" value="Zadaj pripomienku" onclick="saveNote()">
+              </div>
+          </form>
+      </div>
+      <div id="notes-list" class="container col-md-5 col-xs-12 text-center">
+          <h3>Zoznam Pripomienok:</h3>
+          <div class="reminder-notes">
+              <div class="panel panel-default">
+                  <span class="close" onclick="deleteNote(this)">&times;</span>
+                  <div class="panel-heading">Odovzdanie projektu</div>
+                  <div class="panel-body">Nezabudni odovzdať tento projekt do soboty 10.12, 20:00.</div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-2"></div>
     </div>
 </div>
 <div id="footer" class="navbar navbar-fixed-bottom">
