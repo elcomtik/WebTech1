@@ -1,4 +1,3 @@
-document.getElementById("best_time").addEventListener("load", get_result);
 var canvas;
 var ctx;
 var x;
