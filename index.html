@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/visitCounter.js"></script>
 </head>
 <body onload="generuj_menu()">
 <div id="nav" class="row">
@@ -25,8 +26,10 @@
 
 <div id="footer" class="navbar navbar-fixed-bottom">
     <footer class="container-fluid text-center">
-        <p>Webové technológie 2016/2017</p>
-        <span id="counter"></span>
+        <p>Webové technológie 2016/2017 | <span id='counter'></span></p>
+        <script>
+                  checkVisitsCookie();
+        </script>
     </footer>
 </div>
 
