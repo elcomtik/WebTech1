@@ -46,16 +46,16 @@ function generuj_menu() {
         {name:"Lukáš Šníder", typ:1, ref:""},
         {name:"Martin Meľuch", typ:1, ref:""}];
     var pamiaty = [
-        {name:"Železiareň Františková Huta", typ:0, ref:"", autor:"Roman Danko"},
-        {name:"Kysucko-Oravská lesná úvraťová železnica", typ:0, ref:"", autor:"Roman Danko"},
-        {name:"Čiernohronská železnica", typ:0, ref:"", autor:"Adam Podhradský"},
-        {name:"Vysutá lanová dráha", typ:0, ref:"", autor:"Adam Podhradský"},
-        {name:"Gápeľ-Solivar Prešov", typ:0, ref:"", autor:"Erik Pribula"},
-        {name:"Hvezdáreň Prešov", typ:0, ref:"", autor:"Erik Pribula"},
+        {name:"Železiareň Františková Huta", typ:0, ref:"/html/pamiatky.html", autor:"Roman Danko"},
+        {name:"Kysucko-Oravská lesná úvraťová železnica", typ:0, ref:"/html/pamiatky.html", autor:"Roman Danko"},
+        {name:"Čiernohronská železnica", typ:0, ref:"/html/pamiatky.html", autor:"Adam Podhradský"},
+        {name:"Vysutá lanová dráha", typ:0, ref:"/html/pamiatky.html", autor:"Adam Podhradský"},
+        {name:"Gápeľ-Solivar Prešov", typ:0, ref:"/html/pamiatky.html", autor:"Erik Pribula"},
+        {name:"Parná elektráreň Žilina", typ:0, ref:"/html/pamiatky.html", autor:"Erik Pribula"},
         {name:"Zvolenský hrad", typ:0, ref:"/html/pamiatky.html", autor:"Lukáš Šníder"},
         {name:"Štôlňa-Banská Štiavnica", typ:0, ref:"/html/pamiatky.html", autor:"Lukáš Šníder"},
-        {name:"Jazero mieru", typ:0, ref:"", autor:"Martin Meľuch"},
-        {name:"Slávikov mlyn", typ:0, ref:"", autor:"Martin Meľuch"},
+        {name:"Jazero mieru", typ:0, ref:"/html/pamiatky.html", autor:"Martin Meľuch"},
+        {name:"Slávikov mlyn", typ:0, ref:"/html/pamiatky.html", autor:"Martin Meľuch"},
     ];
     var hry = [
         {name:"Čínske šachy", typ:0, ref:"", autor:"Roman Danko"},
@@ -97,24 +97,6 @@ function generuj_menu() {
             p++;
             list_tmp1.innerHTML+='<ul class="dropdown-menu" id="'+p+'"></ul>';
             list_tmp2 = document.getElementById(p);
-            if (level1[i].name=="Technické pamiatky")
-            {
-                for (j=0;j<autori.length;j++)
-                {
-                    p++;
-                    list_tmp2.innerHTML+='<li class="dropdown-submenu" id="'+p+'">';
-                    list_tmp3 = document.getElementById(p);
-                    list_tmp3.innerHTML+='<a class="test" tabindex="-1" href="#">'+autori[j].name+' <span class="caret-right"></span></a>';
-                    p++;
-                    list_tmp3.innerHTML+='<ul class="dropdown-menu" id="'+p+'"></ul>';
-                    list_tmp4 = document.getElementById(p);
-                    for(k=0;k<pamiaty.length;k++)
-                        if (pamiaty[k].autor==autori[j].name)
-                        {
-                            list_tmp4.innerHTML+='<li><a tabindex="-1" href="'+webroot+pamiaty[k].ref+'">'+pamiaty[k].name+' </a></li>';
-                        }
-                }
-            }
             if (level1[i].name=="Hry")
             {
                 for(j=0;j<hry.length;j++)
