@@ -72,7 +72,7 @@ function generuj_menu() {
     var container = document.getElementById("container");
     container.innerHTML+= "<div class='navbar-header' id='nav_header'> </div>";
     var navheader = document.getElementById('nav_header');
-    navheader.innerHTML+='<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#container_list" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">Názov</a>';
+    navheader.innerHTML+='<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#container_list" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">Webtech</a>';
     container.innerHTML+='<div class="collapse navbar-collapse" id="container_list"></div>';
     var container_list = document.getElementById("container_list");
     container_list.innerHTML+='<ul class="nav navbar-nav" id="list"></ul>';
