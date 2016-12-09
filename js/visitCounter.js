@@ -26,7 +26,8 @@ function checkVisitsCookie() {
       visit = 0;
     visit++;
     setCookie("visitCount", visit, 30);
+
     document.getElementById('counter').innerHTML = "Počet zbrazení: " + visit ;
 }
 
-window.onload = checkVisitsCookie();
+//window.onload = checkVisitsCookie();
