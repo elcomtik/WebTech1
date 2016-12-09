@@ -18,17 +18,32 @@
 	    <nav id="navbar"></nav>
 	    <ol id="breadcrumb" class="breadcrumb"></ol>
 	</div>
-
-	Zadaj meno:<input type="text" id="meno" ><button onclick="hladajDatum()">Hľadaj podľa mena</button><br><br>
-	Zadaj dátum:<input type="text" id="datum"><button onclick="hladajMeno()">Hľadaj podľa dátumu</button>
-
-	<h3 id="vysledok"></h3>
-	<!-- nasledujuci kod je pouzity z http://www.kasman.sk/javascript-meniny -->
-	Dnes je: <b><span id="date_den"></span></b>, <b><span id="dnes">dfh</span></b>, meniny oslavuje: <b><span id="date_meniny"></span></b>, zajtra meniny oslavuje: <b><span id="date_meniny_zajtra"></span></b>
-
-  	<br>
-  	Aktuálny čas: <span id="date_time"></span>
-	<span id="kasman" hidden="true"><a href="http://www.kasman.sk/javascript">JavaScript</span>
+  <div class="container-fluid bs-docs-grid text-center">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h1>Aktuálny dátum s meninami</h1>
+      <br>
+      <form>
+        <div class="form-group text-center">
+	        <label for="meno">Zadaj meno:</label>
+          <input type="text" id="meno" class="form-control"><br>
+          <button class="btn btn-primary btn-space" onclick="hladajDatum()">Hľadaj podľa mena</button><br><br>
+        </div>
+        <div class="form-group text-center">
+	        <label for="datum">Zadaj dátum:</label>
+          <input type="text" id="datum" class="form-control"><br>
+          <button class="btn btn-primary btn-space" onclick="hladajMeno()">Hľadaj podľa dátumu</button>
+        </div>
+      </form>
+	    <h3 id="vysledok"></h3>
+	    <!-- nasledujuci kod je pouzity z http://www.kasman.sk/javascript-meniny -->
+	    Dnes je: <b><span id="date_den"></span></b>, <b><span id="dnes">dfh</span></b>, meniny oslavuje: <b><span id="date_meniny"></span></b>, zajtra meniny oslavuje: <b><span id="date_meniny_zajtra"></span></b>
+  	   <br>
+  	  Aktuálny čas: <span id="date_time"></span>
+	    <span id="kasman" hidden="true"><a href="http://www.kasman.sk/javascript">JavaScript</span>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
 	<script src="../js/meniny.js"></script>
   <div id="footer" class="navbar navbar-fixed-bottom">
     <footer class="container-fluid text-center">
