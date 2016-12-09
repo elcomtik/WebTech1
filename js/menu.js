@@ -36,9 +36,9 @@ function generuj_menu() {
         {name: "Mapa", typ: 0, ref: "/html/g-mapa.html"},
         {name: "Kalendár", typ: 0, ref: "/html/meniny.html"},
         {name: "Pripomienkovač", typ: 0, ref: "/html/reminder.html"},
-        {name: "Rozdelenie úloh", typ: 0, ref: "/html/jobs.html"},
         {name: "Hry", typ: 1, ref: ""},
-        {name: "Autori", typ: 1, ref: ""}];
+        {name: "Autori", typ: 1, ref: ""},
+        {name: "Rozdelenie úloh", typ: 0, ref: "/html/jobs.html"}];
 
     var autori = [
         {name: "Roman Danko", typ: 1, ref: ""},
