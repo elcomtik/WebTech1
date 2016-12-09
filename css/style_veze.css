@@ -1,0 +1,21 @@
+#game{
+    background-color: #FFFFFF;
+}
+
+#results{
+    background-color: #cccccc;
+}
+
+#canvas{
+    height: 500px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    margin-top: 15px;
+    display: block;
+    width: 750px;
+    background-color: #FFFFFF;
+
+}
