@@ -12,8 +12,8 @@ var canvas;
 
 			function zapis() {
 				document.getElementById("points").innerHTML=pocetbodov;
-				x=400-15;
-				y=460-15;
+				x=400;
+				y=460;
 				generuj();
 			}
 
