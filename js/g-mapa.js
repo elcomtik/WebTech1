@@ -3,6 +3,7 @@
  */
 
 var map, infowindow;
+var markersData = [];
 
 function initializeMap() {
     //vytvorime mapu
@@ -13,7 +14,7 @@ function initializeMap() {
     };
 
     map = new google.maps.Map(mapCanvas, mapOptions);
-
+    var id = 0;
     //vykresli markery pre pamiatky z ext. JSON suboru. Realizovane pomocou jQuery funkcie
     $.getJSON( "../data/pamiatky.json", function( json ) {
 
@@ -21,14 +22,23 @@ function initializeMap() {
 
             //console.log(pam.nazov);
             var pos = new google.maps.LatLng(pam.sirka,pam.dlzka);
-            var marker = new google.maps.Marker({
+            markersData[id] = new google.maps.Marker({
                 position: pos,
                 map: map,
                 title: pam.nazov + "\nVznik: " + pam.rokVzniku
             });
-            marker.setMap(map);
+            markersData[id].setMap(map);
+            markersData[id].addListener('click', function(){
+              focusOnDate(markersData.indexOf(this)+1);
+            })
+            id++;
         });
     });
 }
 
 google.maps.event.addDomListener(window, "load", initializeMap);
+
+function focusOnMap(id) {
+  map.setZoom(14);
+  map.setCenter(markersData[id-1].getPosition());
+}

@@ -1,3 +1,5 @@
+var timeline;
+
 function initializeTime() {
 
   // DOM element where the Timeline will be attached
@@ -16,9 +18,10 @@ function initializeTime() {
     min: new Date(1000,0,1),
     max: new Date(2016,0,1),
     type: 'point',
-    zoomMax: 1000 * 60 * 60 * 24 * 365 * 500,
+    zoomMax: 1000 * 60 * 60 * 24 * 365 * 1000,
     zoomMin: 1000 * 60 * 60 * 24 * 365,
-    height: 200
+    height: 200,
+    clickToUse: true
   };
   $.getJSON( "../data/pamiatky.json", function( json ) {
 
@@ -28,7 +31,6 @@ function initializeTime() {
         }else {
           rok = (100 * parseInt(pam.rokVzniku)) - 50;
         }
-        console.log(rok);
       items.add(
         {
           id: id,
@@ -41,8 +43,17 @@ function initializeTime() {
   });
 
   // Create a Timeline
-  var timeline = new vis.Timeline(container, items, options);
+  timeline = new vis.Timeline(container, items, options);
   timeline.fit();
+
+  timeline.on('select', function (properties) {
+        focusOnMap(properties.items[0]);
+      });
 }
 
 window.onload = initializeTime;
+
+function focusOnDate(id) {
+  if(timeline)
+    timeline.setSelection(id, {focus: focus.checked});
+}
