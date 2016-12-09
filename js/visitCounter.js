@@ -24,9 +24,9 @@ function checkVisitsCookie() {
     var visit = getCookie("visitCount");
     if(visit == "")
       visit = 0;
-    console.log(visit);
     visit++;
-    console.log(visit);
     setCookie("visitCount", visit, 30);
-    document.getElementById('counter').innerHTML = "Počet návštev: " + visit ;
+    document.getElementById('counter').innerHTML = "Počet zbrazení: " + visit ;
 }
+
+window.onload = checkVisitsCookie();
