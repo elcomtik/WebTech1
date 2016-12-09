@@ -16,7 +16,7 @@ body{
 #timeline{
   display: block;
   position: relative;
-  width: 90vw;
+  width: 100vw;
   height: 20vh;
   margin: auto;
 }
