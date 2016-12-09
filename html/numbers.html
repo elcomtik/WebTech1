@@ -4,38 +4,45 @@
 		<meta charset="UTF-8" />
 		<title>Hra čísla</title>
 
-		<script type="text/javascript" src="../js/menu.js"></script>
-		<link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
-		<link type="text/css" rel="stylesheet" href="../css/style.css">
+	<link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="../css/style.css">
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/menu.js"></script>
+		
 	</head>
 	<body onload="generuj_menu()">
-	<div id="nav" class="row">
-	    <nav id="navbar"></nav>
-	    <ol id="breadcrumb" class="breadcrumb"></ol>
-	</div>
-		<h3>Návod na ovládanie:</h3>
-		<ol>
-			<li>Rozhodnite, či číslo je árne alebo nepárne</li>
-			<li>Potiahnite "kocku" do príslušného vedierka</li>
-			<li>Bodové ohodnotenie:
-				<ul>
-					<li>Za správne umiestnenie dostanete +1b</li>
-					<li>Za nesprávne umiestnenie vám budú odpočítané 2b</li>
-				</ul>
-			</li>
-		</ol>
+		<div id="nav" class="row">
+    		<nav id="navbar"></nav>
+    		<ol id="breadcrumb" class="breadcrumb"></ol>
+		</div>
+			<h3>Návod na ovládanie:</h3>
+			<ol>
+				<li>Rozhodnite, či číslo je párne alebo nepárne</li>
+				<li>Potiahnite "kocku" do príslušného vedierka</li>
+				<li>Bodové ohodnotenie:
+					<ul>
+						<li>Za správne umiestnenie dostanete +1b</li>
+						<li>Za nesprávne umiestnenie vám budú odpočítané 2b</li>
+					</ul>
+				</li>
+			</ol>
 
+		<canvas id="canvas" width="800" height="500">
+		This text is displayed if your browser does not support HTML5 Canvas.
+		</canvas>
 
-
-			<canvas id="canvas" width="800" height="500">
-			This text is displayed if your browser does not support HTML5 Canvas.
-			</canvas>
-
-<script type="text/javascript" src="../js/numbers.js"></script>
-
-
+		<script type="text/javascript" src="../js/numbers.js"></script>
 
 		<p>Aktuálny počet bodov: <div id="points">0</div></p>
 		<p>Maximálny počet bodov: <div id="maximum">0</div></p>
+
+		
+		<footer class="container-fluid text-center">
+    		<p>Webové technológie 2016/2017</p>
+    		<span id="counter"></span>
+		</footer>
+		
 	</body>
 </html>
