@@ -11,6 +11,21 @@
 }
 
 /*
+ *https://scotch.io/bar-talk/different-tricks-on-how-to-make-bootstrap-columns-all-the-same-height
+ */
+
+@media only screen and (min-width : 768px) {
+  .is-table-row {
+    display: table;
+  }
+  .is-table-row [class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+  }
+}
+
+/*
  * Styles copied from the Grid example to make grid rows & columns visible.
  */
 .container {
