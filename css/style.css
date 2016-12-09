@@ -39,3 +39,8 @@ h2 {
     height: 0;
     width: 0;
 }
+
+span.glyphicon{
+    display: block;
+    text-align: center;
+}

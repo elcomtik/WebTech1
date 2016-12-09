@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rozdelenie úloh</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script rel="script" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script rel="script" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/visitCounter.js"></script>
+    <script rel="script" src="../js/menu.js"></script>
+</head>
+<body onload="generuj_menu()">
+<div id="nav" class="row">
+    <nav id="navbar"></nav>
+    <ol id="breadcrumb" class="breadcrumb"></ol>
+</div>
+<div class="container">
+    <h2>Tabuľka vypracovaných úloh</h2>
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>Úloha</th>
+            <th>Roman Danko</th>
+            <th>Adam Podhradský</th>
+            <th>Erik Pribula</th>
+            <th>Lukáš Šníder</th>
+            <th>Martin Meľuch</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Grafický dizajn</td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Navigačné menu</td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Aktuálny dátum a meniny</td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Pripomienkovač</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Počítadlo prístupov na stránku</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+        </tr>
+        <tr>
+            <td>Zobrazenie histórie prehliadania</td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Mapa Slovenska</td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Časová os</td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+        </tr>
+        <tr>
+            <td>Hradná studňa a Glazenberg</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Vydrovo a Tatranská lanovka</td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Františkova huta a Kysucko-Oravská železnica</td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Uhornianske jazero a Slávikov mlyn</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+        </tr>
+        <tr>
+            <td>Gápeľ a Parná elektráreň</td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Čínske šachy</td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Čísla</td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Hanojské veže</td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Zemepisné puzzle</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sudoku</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+        </tr>
+        <tr>
+            <td>Tabuľka vypracovaných úloh</td>
+            <td></td>
+            <td></td>
+            <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="footer" class="navbar navbar-fixed-bottom">
+    <footer class="container-fluid text-center">
+        <p>Webové technológie 2016/2017</p>
+    </footer>
+</div>
+</body>
+</html>
