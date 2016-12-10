@@ -341,5 +341,19 @@ function initializeTangram(){
 
 function getPointsTangram() {
   return getPoints;
+}
 
+function checkTangramScore(){
+  var tangramScore = getCookie('tangramScore');
+  if (tangramScore == "")
+    tangramScore = 0;
+    console.log(tangramScore);
+  var points = parseInt(getPointsTangram());
+  console.log(points);
+  if(parseInt(points) > parseInt(tangramScore)){
+    console.log('if');
+    tangramScore = points;
+    setCookie('tangramScore', tangramScore, 30);
+  }
+  return tangramScore;
 }
