@@ -1,46 +1,63 @@
 {
   "vynalezcovia": [
     {
-      "meno": "",
-      "fotka": ""
+      "meno": "Štefan Banič",
+      "fotka": "Štefan_Banič.jpg"
     },
     {
-      "meno": "",
-      "fotka": ""
+      "meno": "PhDr. Bohumil Vančo",
+      "fotka": "Bohumil_Vanco.jpg"
     },
     {
-      "meno": "",
-      "fotka": ""
+      "meno": "Jozef Murgaš",
+      "fotka": "Jozef_Murgas.jpg"
     },
     {
-      "meno": "",
-      "fotka": ""
+      "meno": "Ivan Alexander Getting",
+      "fotka": "Alexander_Getting.jpg"
+    },
+    {
+      "meno": "Ján Bahýľ",
+      "fotka": "Bahily_János.jpg"
+    },
+    {
+      "meno": "Ján Dopjera",
+      "fotka": "Ján_Dopjera.jpg"
     }
   ],
   "vynalezy": [
     {
-      "nazov": "padák",
-      "obrazok": ""
+      "nazov": "Padák",
+      "obrazok": "padak.jpg"
     },
     {
-      "nazov": "3D film",
-      "obrazok": ""
+      "nazov": "Stereoskopický projektor",
+      "obrazok": "stereoscopic_projector.jpg"
     },
     {
-      "nazov": "padák",
-      "obrazok": ""
+      "nazov": "Bezdrôtový telegraf",
+      "obrazok": "telegraf.jpg"
     },
     {
-      "nazov": "padák",
-      "obrazok": ""
+      "nazov": "GPS",
+      "obrazok": "gps.png"
     },
     {
-      "nazov": "padák",
-      "obrazok": ""
+      "nazov": "Vrtuľník",
+      "obrazok": "vrtulnik.jpg"
+    },
+    {
+      "nazov": "Rezonančná gitara",
+      "obrazok": "resonance_guitar.jpg"
     }
   ],
   "odpovede": {
-    "padák": "Banič"
+    "Padák": "Banič",
+    "Stereoskopický projektor": "PhDr. Bohumil Vančo",
+    "Bezdrôtový telegraf": "Jozef Murgaš",
+    "GPS": "Ivan Alexander Getting",
+    "Vrtuľník": "Ján Bahýľ",
+    "Rezonančná gitara": "Ján Dopjera"
 
   }
 }
