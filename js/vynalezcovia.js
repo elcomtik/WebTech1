@@ -11,6 +11,18 @@
 
 var imgPath = "../images/vynalezcovia/"
 var canvas = $('#gameCanvas');
+var hra = 0;
+var actual = 0;
+var pocetOtazok = 5;
+
+var highest = $.cookie("inv_highest");
+if (highest === undefined) {
+    highest = 0;
+    $.cookie("inv_highest", highest);
+}
+
+$("#actual").html(actual);
+$("#highest").html(highest);
 
 //nacitame source data k hre z ext. JSON suboru
 var data;
@@ -24,22 +36,47 @@ function pickRandomQuestion(qArray) {
     return qArray[Math.floor(Math.random() * qArray.length)];
 }
 
-function hraj() {
-    $('#gameCanvas').clearCanvas();
-
+function novaOtazka() {
     console.log(data.odpovede);
     var q = pickRandomQuestion(data.vynalezcovia);
     console.log(q);
     vykresliOtazku(q);
+    hra += 1;
 }
 
+function hraj() {
+    if(hra == 0){
+
+        //inicializujem hernu plochu
+        canvas.clearCanvas();
+        $("#actual").html(actual);
+        $("#highest").html(highest);
+
+        //vyberieme prvu otazku
+        novaOtazka();
+    }
+    else{
+        alert("Máš rozohranú hru, ak si praješ ");
+    }
+}
+
+function koniecHry() {
+    canvas.clearCanvas().drawText({
+        layer: true,
+        x: 400, y: 200,
+        fillStyle: '#36c',
+        fontSize: 36,
+        fontFamily: 'Verdana, sans-serif',
+        text: "Kniec Hry, tvoje skóre je: " + actual,
+    })
+}
 
 function vykresliOtazku(q) {
 
     canvas.drawRect({
         layer: true,
         name: "inventor",
-        strokeStyle: 'black',
+        //strokeStyle: 'black',
         //strokeWidth: 1,
         x: 400, y: 300,
         width: 400, height: 220,
@@ -56,7 +93,7 @@ function vykresliOtazku(q) {
         fontSize: 14,
         fontFamily: 'Verdana, sans-serif',
         text: q.meno,
-    })
+    });
 
     canvas.drawArc({
         layer: true,
@@ -65,11 +102,13 @@ function vykresliOtazku(q) {
         radius: 50,
         draggable: true,
         dragstop: function() {
-            var result = console.log($('canvas').getLayer("inventor").intersects);
+            var result = $('canvas').getLayer("inventor").intersects;
             if (result == true){
+                //vypise hlasku spravna odpoved, iniciuje zobrazenie dalsej otazky
                 spravna();
             }
             else{
+                //zmaze danu moznost, odpocita dva body
                 nespravna();
             }
         }
@@ -77,10 +116,20 @@ function vykresliOtazku(q) {
 }
 
 function spravna() {
-    
+    actual += 1;
+    $("#actual").html(actual);
+
+    //dalsia otakza
+    if(hra < pocetOtazok){
+        novaOtazka();
+    }
+    else{
+        koniecHry();
+    }
 }
 
 function nespravna() {
-
+    actual -= 2;
+    $("#actual").html(actual);
 }
 
