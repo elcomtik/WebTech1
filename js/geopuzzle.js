@@ -16,45 +16,45 @@ var init = function(map) {
 
 var createMenu_ = function(map) {
 
-    var menuDiv = document.createElement('div');
+      var menuDiv = document.createElement('div');
+      menuDiv.style.height = '100%';
+      menuDiv.style.width = '20%';
+      menuDiv.style.backgroundColor = 'white';
+      menuDiv.style.fontSize = '18px';
+      menuDiv.style.textAlign = 'center';
+      menuDiv.style.color = 'blue';
 
-    menuDiv.style.height = '100%';
-    menuDiv.style.width = '20%';
-    menuDiv.style.backgroundColor = 'white';
-    menuDiv.style.fontSize = '18px';
-    menuDiv.style.textAlign = 'center';
-    menuDiv.style.color = 'blue';
+      var pieceTitleDiv = document.createElement('div');
+      pieceTitleDiv.innerText = 'SKORE:';
+      pieceTitleDiv.style.marginTop = '20%';
+      pieceTitleDiv.className = "menu-item";
 
-    var pieceTitleDiv = document.createElement('div');
-    pieceTitleDiv.innerText = 'SKORE:';
-    pieceTitleDiv.style.marginTop = '20%';
+      var pieceDiv = globPieceDiv = document.createElement('div');
+      pieceDiv.innerText = '0 z ' + ALL_PUZZLE_PIECES;
+      pieceDiv.className = "menu-item";
 
-    var pieceDiv = globPieceDiv = document.createElement('div');
-    pieceDiv.innerText = '0 z ' + ALL_PUZZLE_PIECES;
+      var resetDiv = document.createElement('div');
+      resetDiv.innerText = 'Restart';
+      resetDiv.className = "menu-item";
+      resetDiv.style.color = "blue";
+      resetDiv.onclick = resetGame.bind(this);
 
-    var resetDiv = document.createElement('div');
+      var bestScoreDiv = document.createElement('div');
+      bestScoreDiv.innerText = "Najvyššie skóre:";
+      bestScoreDiv.className = "menu-item";
 
-    resetDiv.innerText = 'Restart';
-    resetDiv.className = "menu-item";
-    resetDiv.style.cursor = "pointer";
-    resetDiv.style.borderTop = "3px solid grey";
-    resetDiv.style.borderBottom = "3px solid grey";
+      var actualScoreDiv = globScoreDiv = document.createElement('div');
+      actualScoreDiv.innerHTML = "Úlohou je nájsť regióny Slovenska a správne ich tvary, ktoré sú na mape náhodné umiestnené, priradiť k správnemu regiónu. Hra je úspešne ukončená ak nájdete všetky regióny.";
+      actualScoreDiv.className = "menu-item";
+      actualScoreDiv.style.height = '20%';
 
-    resetDiv.style.color = "blue";
+      menuDiv.appendChild(pieceTitleDiv);
+      menuDiv.appendChild(pieceDiv);
 
-    var bestScoreDiv = document.createElement('div');
-    bestScoreDiv.innerText = "Najvyššie skóre:";
-
-    var actualScoreDiv = globScoreDiv = document.createElement('div');
-    resetDiv.onclick = resetGame.bind(this);
-
-    menuDiv.appendChild(pieceTitleDiv);
-    menuDiv.appendChild(pieceDiv);
-
-    menuDiv.appendChild(resetDiv);
-    menuDiv.appendChild(bestScoreDiv);
-    menuDiv.appendChild(actualScoreDiv);
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(menuDiv);
+      menuDiv.appendChild(resetDiv);
+      menuDiv.appendChild(bestScoreDiv);
+      menuDiv.appendChild(actualScoreDiv);
+      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(menuDiv);
 };
 
 var loadPuzzleData = function() {

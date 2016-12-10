@@ -13,6 +13,9 @@ html, body {
 }
 
 .menu-item {
+    border: 3px solid grey;
+    height: 10%;
+    margin: auto;
     margin-bottom: 16px;
     margin-top: 16px;
 }
