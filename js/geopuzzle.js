@@ -64,7 +64,7 @@ var loadPuzzleData = function() {
             return;
         loadDataComplete(JSON.parse(xmlhttpRequest.responseText));
     }.bind(this);
-    xmlhttpRequest.open('GET', 'js/slovakdata.json', true);
+    xmlhttpRequest.open('GET', '../data/slovakdata.json', true);
     xmlhttpRequest.send(null);
 };
 
