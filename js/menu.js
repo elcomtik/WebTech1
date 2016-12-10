@@ -33,12 +33,17 @@ function generuj_menu() {
     var level1 = [
         {name: "Úvod", typ: 0, ref: "/index.html"},
         {name: "Technické pamiatky", typ: 0, ref: "/html/pamiatky.html"},
-        {name: "Mapa", typ: 0, ref: "/html/g-mapa.html"},
+        {name: "Mapy", typ: 1, ref: ""},
         {name: "Kalendár", typ: 0, ref: "/html/meniny.html"},
         {name: "Pripomienkovač", typ: 0, ref: "/html/reminder.html"},
         {name: "Hry", typ: 1, ref: ""},
         {name: "Autori", typ: 1, ref: ""},
         {name: "Rozdelenie úloh", typ: 0, ref: "/html/jobs.html"}];
+
+    var mapy = [
+        {name: "Google", typ: 0, ref: "/html/g-mapa.html"},
+        {name: "Obrázok", typ: 0, ref: "/html/n-mapa.html"}
+    ];
 
     var autori = [
         {name: "Roman Danko", typ: 1, ref: ""},
@@ -95,6 +100,11 @@ function generuj_menu() {
             p++;
             list_tmp1.innerHTML += '<ul class="dropdown-menu" id="' + p + '"></ul>';
             list_tmp2 = document.getElementById(p);
+            if (level1[i].name == "Mapy") {
+                for (j = 0; j < mapy.length; j++) {
+                    list_tmp2.innerHTML += ' <li><a tabindex="-1" href="' + webroot + mapy[j].ref + '">' + mapy[j].name + ' </a></li>';
+                }
+            }
             if (level1[i].name == "Hry") {
                 for (j = 0; j < hry.length; j++) {
                     list_tmp2.innerHTML += ' <li><a tabindex="-1" href="' + webroot + hry[j].ref + '">' + hry[j].name + ' </a></li>';
