@@ -13,7 +13,9 @@
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script rel="script" src="../js/tangram.js"></script>
       <script src="../js/sweetalert.min.js"></script>
+      <script src="../js/visitCounter.js"></script>
       <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+
 
   </head>
   <body onload="generuj_menu()">
@@ -41,6 +43,7 @@
         <p>Úlohou hráča je poskladať z daných útvarov štvorec na hracej ploche. Útvary môžete otáčať
         stlačením tlačidla.</p>
         <p>Body sa počítajú ako maximálny počet bodov deleno čas, ktorý ste hrali</span></p>
+        <p>Maximálny získaný počet bodov: <span id="score"></span></p>
         <button type="button" name="restart" onClick="window.location.reload()">Reštartuj!</button>
       </div>
     </div>

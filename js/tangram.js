@@ -1,3 +1,4 @@
+var getPoints;
 function initializeTangram(){
        $('.stuff').draggable({
            containment:'window',
@@ -12,8 +13,11 @@ function initializeTangram(){
         var startT= new Date();
         var timePlayed;
         var maxPoints = 100000;
-        var getPoints;
         var angle = 90;
+
+
+        document.getElementById('score').innerHTML =   checkTangramScore();
+
 
         function handleDrop(e,ui){
           leftPlayfield = document.getElementById('playfield').offsetLeft;
@@ -23,7 +27,8 @@ function initializeTangram(){
             || check3()
             || check4()){
             timePlayed = (new Date() - startT) / 1000;
-            getPoints = maxPoints/timePlayed
+            getPoints = parseInt(maxPoints/timePlayed);
+            document.getElementById('score').innerHTML =   checkTangramScore();
               swal("Gratulujem!", "Podarilo sa vám vyskladať Tangram, hrali ste "+ timePlayed +
               "s a získali " + getPoints + " bodov.", "success");
             startT = new Date();
@@ -330,4 +335,11 @@ function initializeTangram(){
        });
        angle+=90;
     });
+
+
+}
+
+function getPointsTangram() {
+  return getPoints;
+
 }
