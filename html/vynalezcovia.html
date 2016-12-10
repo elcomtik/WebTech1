@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hra priraď vynález</title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/vynalezcovia.css">
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/jcanvas.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/menu.js"></script>
+    <script type="text/javascript" src="../js/visitCounter.js"></script>
+    <script type="text/javascript" src="../js/vynalezcovia.js"></script>
+</head>
+<body onload="generuj_menu()">
+
+<nav id="navbar"></nav>
+<ol id="breadcrumb" class="breadcrumb"></ol>
+
+<div id="hra" class="container-fluid bs-docs-grid text-center">
+    <div id="pravidla" class="col-lg col-md col-sm text-left">
+        <p>
+            Hra spočíva v priraďovaní správneho vynálezu k vynálezcovi. Na obrazovke sa zoradí vždy práve jeden
+            Slovenský vynálezca a niekoľko náhodne vybraných vynálezov. Je potrebné chytiť myšou vynález a potiahnuť ho
+            nad vynálezcu. Hráč v jednej hre dostane 5 rôznych úloh. Hodnotenie je nasledovné:
+        <ul class="text-left">
+            <li>na počiatku má hráč 0b</li>
+            <li>za každé správne priradenie dostane +1b</li>
+            <li>za každé ne-správne priradenie dostane -2b</li>
+        </ul>
+        </p>
+        <p>
+            Hráčovi sa zobrazuje jeho aktuálne skóre a jeho najvyššie dosiahnuté skôre v predošlých hrách.
+        </p>
+    </div>
+
+    <button class="btn btn-primary btn-space" onclick="hraj()">Štart</button>
+    <div id="score">Aktuálne skóre:<span id="actual"></span>&nbsp;Najvyššie skóre:<span
+            id="highest"></span></div>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+</div>
+
+<script rel="script" src="../js/vynalezcovia.js"></script>
+
+
+<div id="footer" class="navbar navbar-fixed-bottom">
+    <footer class="container-fluid text-center">
+        <p>Webové technológie 2016/2017 | <span id='counter'></span></p>
+        <script>
+            checkVisitsCookie();
+        </script>
+    </footer>
+</div>
+
+
+</body>
+</html>

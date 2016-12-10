@@ -1,0 +1,63 @@
+{
+  "vynalezcovia": [
+    {
+      "meno": "Štefan Banič",
+      "fotka": "Štefan_Banič.jpg"
+    },
+    {
+      "meno": "PhDr. Bohumil Vančo",
+      "fotka": "Bohumil_Vanco.jpg"
+    },
+    {
+      "meno": "Jozef Murgaš",
+      "fotka": "Jozef_Murgas.jpg"
+    },
+    {
+      "meno": "Ivan Alexander Getting",
+      "fotka": "Alexander_Getting.jpg"
+    },
+    {
+      "meno": "Ján Bahýľ",
+      "fotka": "Bahily_János.jpg"
+    },
+    {
+      "meno": "Ján Dopjera",
+      "fotka": "Ján_Dopjera.jpg"
+    }
+  ],
+  "vynalezy": [
+    {
+      "nazov": "Padák",
+      "obrazok": "padak.jpg"
+    },
+    {
+      "nazov": "Stereoskopický projektor",
+      "obrazok": "stereoscopic_projector.jpg"
+    },
+    {
+      "nazov": "Bezdrôtový telegraf",
+      "obrazok": "telegraf.jpg"
+    },
+    {
+      "nazov": "GPS",
+      "obrazok": "gps.png"
+    },
+    {
+      "nazov": "Vrtuľník",
+      "obrazok": "vrtulnik.jpg"
+    },
+    {
+      "nazov": "Rezonančná gitara",
+      "obrazok": "resonance_guitar.jpg"
+    }
+  ],
+  "odpovede": {
+    "Štefan Banič": "Padák",
+    "PhDr. Bohumil Vančo": "Stereoskopický projektor",
+    "Jozef Murgaš": "Bezdrôtový telegraf",
+    "Ivan Alexander Getting": "GPS",
+    "Ján Bahýľ": "Vrtuľník",
+    "Ján Dopjera": "Rezonančná gitara"
+
+  }
+}

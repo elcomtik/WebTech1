@@ -7,13 +7,13 @@ function generate_breadcrumbs() {
     //console.log(pHistory.toString());
 
     var pHistory = $.cookie("pHistory");
-    if (pHistory === undefined) {
+    if(pHistory === undefined){
         pHistory = {items: []};
     }
     var bc = "";
     //console.log(pHistory);
 
-    $.each(pHistory.items, function (key, value) {
+    $.each( pHistory.items, function( key, value ) {
         bc += "<li><a href='" + value.href + "'>" + value.title + "</a></li>";
 
     });
@@ -59,11 +59,11 @@ function generuj_menu() {
         {name: "Slávikov mlyn", typ: 0, ref: "/html/pamiatky.html#pam_martin", autor: "Martin Meľuch"},
     ];
     var hry = [
-        {name: "Čínske šachy", typ: 0, ref: "", autor: "Roman Danko"},
-        {name: "Čísla", typ: 0, ref: "/html/numbers.html", autor: "Adam Podhradský"},
-        {name: "Hanojské veže", typ: 0, ref: "/html/veze.html", autor: "Erik Pribula"},
-        {name: "Zemepisné puzzle", typ: 0, ref: "", autor: "Lukáš Šníder"},
-        {name: "Sudoku", typ: 0, ref: "", autor: "Martin Meľuch"},
+        {name:"Priraď vynález", typ:0, ref:"/html/vynalezcovia.html", autor:"Roman Danko"},
+        {name:"Čísla", typ:0, ref:"/html/numbers.html", autor:"Adam Podhradský"},
+        {name:"Hanojské veže", typ:0, ref:"/html/veze.html",autor:"Erik Pribula"},
+        {name:"Zemepisné puzzle", typ:0, ref:"/html/geopuzzle.html", autor:"Lukáš Šníder"},
+        {name:"Tangram", typ:0, ref:"/html/tangram.html", autor:"Martin Meľuch"},
     ];
 
 

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+      <meta charset="UTF-8" />
+      <title>Tangram</title>
+      <link rel="stylesheet" href="../css/bootstrap.css">
+      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="../css/tangram.css">
+      <script rel="script" src="../js/jquery-3.1.1.min.js"></script>
+      <script rel="script" src="../js/jquery.cookie.js"></script>
+      <script rel="script" src="../js/bootstrap.js"></script>
+      <script rel="script" src="../js/menu.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script rel="script" src="../js/tangram.js"></script>
+      <script src="../js/sweetalert.min.js"></script>
+      <script src="../js/visitCounter.js"></script>
+      <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+
+
+  </head>
+  <body onload="generuj_menu()">
+    <div id="nav" class="row">
+      <nav id="navbar">
+      </nav>
+      <ol id="breadcrumb" class="breadcrumb"></ol>
+    </div>
+    <div id="tangram">
+
+      <h1>Tangram</h1>
+
+      <div id="playfield" >
+      </div>
+      <div id="bucket">
+        <div id="tri1" class="stuff tri"></div>
+        <div id="tri5" class="stuff tri"></div>
+        <div id="tri4" class="stuff tri"></div>
+        <div id="tri2" class="stuff tri"></div>
+        <div id="tri3" class="stuff tri"></div>
+        <div id="square" class="stuff"></div>
+        <div id="rhombus" class="stuff"></div>
+      </div>
+      <div id="rules">
+        <p>Úlohou hráča je poskladať z daných útvarov štvorec na hracej ploche. Útvary môžete otáčať
+        stlačením tlačidla.</p>
+        <p>Body sa počítajú ako maximálny počet bodov deleno čas, ktorý ste hrali</span></p>
+        <p>Maximálny získaný počet bodov: <span id="score"></span></p>
+        <button type="button" name="restart" onClick="window.location.reload()">Reštartuj!</button>
+      </div>
+    </div>
+
+    <script> initializeTangram()</script>
+
+  <footer class="container-fluid text-center">
+      <p>Webové technológie 2016/2017</p>
+      <span id="counter"></span>
+  </footer>
+
+  </body>
+</html>

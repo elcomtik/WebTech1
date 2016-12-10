@@ -1,0 +1,92 @@
+body{
+  height: 100vh;
+}
+.stuff{
+    position:absolute;
+}
+#tangram{
+  width: 90vw;
+  margin: auto;
+}
+
+#playfield{
+  background-image: url('../images/tangram-playfield.png');
+  width: 500px;
+  height: 500px;
+  float: left;
+}
+#bucket{
+  width: 500px;
+  height: 500px;
+  float: left;
+  padding: 25px;
+}
+#rules{
+  top: 500px;
+  height: 80vh;
+}
+#tri1 {
+  width: 0;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-width: 0 0 250px 250px;
+  border-color: transparent transparent orange transparent;
+  z-index: 4;
+}
+#tri2 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 250px 0 250px 250px;
+  border-color: transparent transparent transparent green;
+  z-index: 1;
+}
+#tri3 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 125px 125px 125px 0;
+  border-color: transparent purple transparent transparent;
+}
+#tri4 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 250px 0 250px 250px;
+  border-color: transparent transparent transparent blue;
+  z-index: 1;
+}
+#tri5 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 125px 125px 125px 0;
+  border-color: transparent red transparent transparent;
+}
+#rhombus{
+  width: 250px;
+	height: 125px;
+	-webkit-transform: skew(-45deg);
+	   -moz-transform: skew(-45deg);
+	     -o-transform: skew(-45deg);
+	background: pink;
+}
+#square{
+  width: 250px;
+	height: 125px;
+	border: 125px solid transparent;
+	border-bottom-color: cyan;
+	position: relative;
+	top: 0px;
+}
+#square:after {
+	content: '';
+	position: absolute;
+	left: -125px;
+	top: 125px;
+	width: 250px;
+	height: 125px;
+	border: 125px solid transparent;
+	border-top-color: cyan;
+}
