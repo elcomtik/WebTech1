@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <title>Zemepisné puzzle</title>
     <link rel="stylesheet" href="../css/geopuzzle.css"  type="text/css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu9SzO0kh7bUeKJsYziOQyWkYDWhbBWU8=&libraries=geometry&callback=initMap" async defer></script>
     <script src="../js/geopuzzle.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/menu.js"></script>
 </head>
-<body>
-    <div id="map"></div>
+<body onload="generuj_menu()">
+  <div id="nav" class="row">
+      <nav id="navbar"></nav>
+      <ol id="breadcrumb" class="breadcrumb"></ol>
+  </div>
+  <div id="map"></div>
+
+  <div id="footer" class="navbar navbar-fixed-bottom">
+      <footer class="container-fluid text-center">
+          <p>Webové technológie 2016/2017 | <span id='counter'></span></p>
+          <script>
+              checkVisitsCookie();
+          </script>
+      </footer>
+  </div>
 </body>
 </html>
