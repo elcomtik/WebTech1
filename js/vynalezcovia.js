@@ -11,9 +11,11 @@
 
 var imgPath = "../images/vynalezcovia/"
 var canvas = $('#gameCanvas');
+var startButton = $("#restart");
 var hra = 0;
 var actual = 0;
 var pocetOtazok = 5;
+
 
 var highest = $.cookie("inv_highest");
 if (highest === undefined) {
@@ -26,9 +28,23 @@ $("#highest").html(highest);
 
 //nacitame source data k hre z ext. JSON suboru
 var data;
-$.getJSON("../data/vynalezcovia.json", function(json) {
+$.getJSON("../data/vynalezcovia.json", function (json) {
     data = json;
 });
+
+function genRandPositions() {
+
+    var positions = [100, 300, 500, 700];
+    var result = [];
+
+    for (i=0; i<4; i++){
+        var p = (Math.floor(Math.random() * (4-i)));
+        result.push(positions[p]);
+        positions.splice(p,1);
+    }
+
+    return result;
+}
 
 function pickRandomQuestion(qArray) {
 
@@ -44,19 +60,41 @@ function novaOtazka() {
 
 function hraj() {
 
-    if(hra == 0 ){
+    if (hra == 0) {
         //inicializujem hernu plochu
         canvas.removeLayers();
         canvas.clearCanvas();
+        actual = 0;
         $("#actual").html(actual);
         $("#highest").html(highest);
+        startButton.css('display','none');
 
         //vyberieme prvu otazku
         novaOtazka();
     }
-    else{
-        alert("Máš rozohranú hru, ak si praješ ");
+    else {
+        alert("Máš rozohranú hru, ak si tak praješ, stlač reštart ");
+        startButton.css('display','inline');
+
+        setTimeout(function () {
+            startButton.css('display','none');
+        }, 5000);
     }
+}
+
+function restart() {
+
+
+    //inicializujem hernu plochu
+    canvas.removeLayers();
+    canvas.clearCanvas();
+    actual = 0;
+    $("#actual").html(actual);
+    $("#highest").html(highest);
+    startButton.css('display','none');
+
+    //vyberieme prvu otazku
+    novaOtazka();
 }
 
 function koniecHry() {
@@ -73,7 +111,7 @@ function koniecHry() {
     })
 
     //ak je skore dotera znajvyssie ulozi ho do cookie
-    if( actual > highest){
+    if (actual > highest) {
         highest = actual;
         $.cookie("inv_highest", highest);
     }
@@ -94,7 +132,7 @@ function vykresliOtazku(q) {
         layer: true,
         name: "inventor",
         x: 400, y: 300,
-        width: 400, height: 220,
+        width: 300, height: 220,
         sides: 4
     }).drawImage({
         layer: true,
@@ -111,31 +149,52 @@ function vykresliOtazku(q) {
     });
 
     //vykreslim vsetky mozne odpovede-obrazky
-    posX = 75;
+    var pos = genRandPositions();
+    index = 0;
+    match = false;
     $.each(data.vynalezy, function (key, v) {
 
-        canvas.drawImage({
-            layer: true,
-            name: v.nazov,
-            source: imgPath + v.obrazok,
-            x: posX, y: 100,
-            scale: 1,
-            draggable: true,
-            dragstop: function() {
-                var result = $('canvas').getLayer("inventor").intersects;
+        if(data.odpovede[q.meno] == v.nazov){
+            match = true;
+        }
 
-                if ((result == true) && (data.odpovede[q.meno] ==  v.nazov)){
-                    //vypise hlasku spravna odpoved, iniciuje zobrazenie dalsej otazky
-                    spravna();
+        if((match == true) && (index < 4)){
+            canvas.drawImage({
+                layer: true,
+                groups: [v.nazov],
+                draggable: true,
+                dragGroups: [v.nazov],
+                source: imgPath + v.obrazok,
+                x: pos[index], y: 100,
+                scale: 1,
+
+                dragstop: function () {
+                    var result = $('canvas').getLayer("inventor").intersects;
+
+                    if ((result == true) && (data.odpovede[q.meno] == v.nazov)) {
+                        //vypise hlasku spravna odpoved, iniciuje zobrazenie dalsej otazky
+                        spravna();
+                    }
+                    else if (result == true) {
+                        //zmaze danu moznost, odpocita dva body
+                        canvas.removeLayerGroup(v.nazov);
+                        nespravna();
+                    }
                 }
-                else if(result == true){
-                    //zmaze danu moznost, odpocita dva body
-                    canvas.removeLayer(v.nazov);
-                    nespravna();
-                }
-            }
-        });
-        posX += 150;
+            }).drawText({
+                layer: true,
+                groups: [v.nazov],
+                draggable: true,
+                dragGroups: [v.nazov],
+                x: pos[index], y: 170,
+                fillStyle: '#36c',
+                fontSize: 12,
+                fontFamily: 'Verdana, sans-serif',
+                text: v.nazov
+            });
+
+            index += 1;
+        }
     });
 }
 
@@ -146,10 +205,10 @@ function spravna() {
     $("#actual").html(actual);
 
     //dalsia otakza
-    if(hra < pocetOtazok){
+    if (hra < pocetOtazok) {
         novaOtazka();
     }
-    else{
+    else {
         koniecHry();
     }
 }
@@ -162,7 +221,7 @@ function nespravna() {
 }
 
 //vypisem privitaciu hlasku
-$( window ).ready(function () {
+$(window).ready(function () {
 
     console.log("ahoj");
     canvas.removeLayers();

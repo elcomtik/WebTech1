@@ -36,7 +36,8 @@
         </p>
     </div>
 
-    <button class="btn btn-primary btn-space" onclick="hraj()">Štart</button>
+    <button id="start" class="btn btn-primary btn-space" onclick="hraj()">Štart</button>
+    <button id="restart" class="btn btn-primary btn-space" onclick="restart()" style="display: none">Reštart</button>
     <div id="score">Aktuálne skóre:<span id="actual"></span>&nbsp;Najvyššie skóre:<span
             id="highest"></span></div>
     <canvas id="gameCanvas" width="800" height="400"></canvas>

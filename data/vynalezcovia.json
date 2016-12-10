@@ -49,6 +49,18 @@
     {
       "nazov": "Rezonančná gitara",
       "obrazok": "resonance_guitar.jpg"
+    },
+    {
+      "nazov": "Fotografický objektív",
+      "obrazok": "fotograficky_objektiv.jpg"
+    },
+    {
+      "nazov": "Banské čerpadlo",
+      "obrazok": "banske_cerpadlo.jpg"
+    },
+    {
+      "nazov": "Tepelné čerpadlo",
+      "obrazok": "tepelne_cerpadlo.jpg"
     }
   ],
   "odpovede": {
