@@ -85,7 +85,7 @@ function hladajDatum()
 	        //xmlDoc.getElementsByTagName("SK")[0].childNodes[0].nodeValue;
 	        var i = 0;
 	        var datum=document.getElementById("datum").value;
-	        console.log(datum)
+	        //console.log(datum)
 	        if (datum.length<4)
 	        {
 				document.getElementById("vysledok").innerHTML = "Dátum nie je zadaný v požadovanom formáte."
