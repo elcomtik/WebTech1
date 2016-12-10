@@ -1,0 +1,46 @@
+{
+  "vynalezcovia": [
+    {
+      "meno": "",
+      "fotka": ""
+    },
+    {
+      "meno": "",
+      "fotka": ""
+    },
+    {
+      "meno": "",
+      "fotka": ""
+    },
+    {
+      "meno": "",
+      "fotka": ""
+    }
+  ],
+  "vynalezy": [
+    {
+      "nazov": "padák",
+      "obrazok": ""
+    },
+    {
+      "nazov": "3D film",
+      "obrazok": ""
+    },
+    {
+      "nazov": "padák",
+      "obrazok": ""
+    },
+    {
+      "nazov": "padák",
+      "obrazok": ""
+    },
+    {
+      "nazov": "padák",
+      "obrazok": ""
+    }
+  ],
+  "odpovede": {
+    "padák": "Banič"
+
+  }
+}
