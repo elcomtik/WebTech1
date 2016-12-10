@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa</title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.17.0/vis.min.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="../css/map.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.17.0/vis.min.js"></script>
+    <script type="text/javascript" src="../js/menu.js"></script>
+    <script type="text/javascript" src="../js/timeline.js"></script>
+    <script type="text/javascript" src="../js/visitCounter.js"></script>
+</head>
+<body onload="generuj_menu()">
+
+<div id="nav" class="row">
+    <nav id="navbar"></nav>
+    <ol id="breadcrumb" class="breadcrumb"></ol>
+</div>
+
+<div id="map" align="center"> <img src="../images/map.png"> </div>
+
+<div id="timeline"></div>
+
+<div id="footer" class="navbar navbar-fixed-bottom">
+    <footer class="container-fluid text-center">
+        <p>Webové technológie 2016/2017 | <span id='counter'></span></p>
+        <script>
+            checkVisitsCookie();
+        </script>
+    </footer>
+</div>
+</body>
+</html>
