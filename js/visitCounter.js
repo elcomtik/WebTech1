@@ -29,5 +29,3 @@ function checkVisitsCookie() {
 
     document.getElementById('counter').innerHTML = "Počet zbrazení: " + visit ;
 }
-
-//window.onload = checkVisitsCookie();
