@@ -46,7 +46,7 @@ var createMenu_ = function(map) {
       var actualScoreDiv = globScoreDiv = document.createElement('div');
       actualScoreDiv.innerHTML = "Úlohou je nájsť regióny Slovenska a správne ich tvary, ktoré sú na mape náhodné umiestnené, priradiť k správnemu regiónu. Hra je úspešne ukončená ak nájdete všetky regióny.";
       actualScoreDiv.className = "menu-item";
-      actualScoreDiv.style.height = '20%';
+      actualScoreDiv.style.height = '30%';
 
       menuDiv.appendChild(pieceTitleDiv);
       menuDiv.appendChild(pieceDiv);
@@ -88,6 +88,7 @@ var printCountSolved = function() {
     // All the pieces have been found
     if (successCount == ALL_PUZZLE_PIECES) {
         var lastBest = Number(globScoreDiv.innerHTML);
+        alert("Vyhrali ste túto hru!");
         /*if (lastBest != "")
             if (lastBest > globTimeDiv.innerHTML)
                 globScoreDiv.innerHTML = globTimeDiv.innerHTML;
@@ -178,7 +179,7 @@ var checkIfFound = function(bounds, poly) {
     var paths = poly.getPaths().getArray();
 
     var p = paths[0].getArray();
-    for (var j = 0; j < p.length; j++) {
+    for (var i = 0; i < p.length; i++) {
         if (!b.contains(p[j])) {
             return false;
         }
