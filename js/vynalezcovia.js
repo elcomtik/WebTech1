@@ -28,7 +28,6 @@ $("#highest").html(highest);
 var data;
 $.getJSON("../data/vynalezcovia.json", function(json) {
     data = json;
-    console.log(data);
 });
 
 function pickRandomQuestion(qArray) {
@@ -37,17 +36,17 @@ function pickRandomQuestion(qArray) {
 }
 
 function novaOtazka() {
-    console.log(data.odpovede);
+
     var q = pickRandomQuestion(data.vynalezcovia);
-    console.log(q);
     vykresliOtazku(q);
     hra += 1;
 }
 
 function hraj() {
-    if(hra == 0){
 
+    if(hra == 0 ){
         //inicializujem hernu plochu
+        canvas.removeLayers();
         canvas.clearCanvas();
         $("#actual").html(actual);
         $("#highest").html(highest);
@@ -61,23 +60,39 @@ function hraj() {
 }
 
 function koniecHry() {
+
+    //vypise hlasku
+    canvas.removeLayers();
     canvas.clearCanvas().drawText({
         layer: true,
         x: 400, y: 200,
         fillStyle: '#36c',
         fontSize: 36,
         fontFamily: 'Verdana, sans-serif',
-        text: "Kniec Hry, tvoje skóre je: " + actual,
+        text: "Koniec Hry, tvoje skóre je: " + actual,
     })
+
+    //ak je skore dotera znajvyssie ulozi ho do cookie
+    if( actual > highest){
+        highest = actual;
+        $.cookie("inv_highest", highest);
+    }
+
+    //premaze pocet vyroiesenych uloh
+    hra = 0;
 }
+
 
 function vykresliOtazku(q) {
 
+    //zakazdym vycistim hernu plochu
+    canvas.removeLayers();
+    canvas.clearCanvas();
+
+    //vykreslim vynalezcu
     canvas.drawRect({
         layer: true,
         name: "inventor",
-        //strokeStyle: 'black',
-        //strokeWidth: 1,
         x: 400, y: 300,
         width: 400, height: 220,
         sides: 4
@@ -85,37 +100,48 @@ function vykresliOtazku(q) {
         layer: true,
         source: imgPath + q.fotka,
         x: 400, y: 300,
-        scale: 0.5,
+        scale: 0.5
     }).drawText({
         layer: true,
         x: 400, y: 380,
         fillStyle: '#36c',
         fontSize: 14,
         fontFamily: 'Verdana, sans-serif',
-        text: q.meno,
+        text: q.meno
     });
 
-    canvas.drawArc({
-        layer: true,
-        fillStyle: 'black',
-        x: 100, y: 100,
-        radius: 50,
-        draggable: true,
-        dragstop: function() {
-            var result = $('canvas').getLayer("inventor").intersects;
-            if (result == true){
-                //vypise hlasku spravna odpoved, iniciuje zobrazenie dalsej otazky
-                spravna();
+    //vykreslim vsetky mozne odpovede-obrazky
+    posX = 75;
+    $.each(data.vynalezy, function (key, v) {
+
+        canvas.drawImage({
+            layer: true,
+            name: v.nazov,
+            source: imgPath + v.obrazok,
+            x: posX, y: 100,
+            scale: 1,
+            draggable: true,
+            dragstop: function() {
+                var result = $('canvas').getLayer("inventor").intersects;
+
+                if ((result == true) && (data.odpovede[q.meno] ==  v.nazov)){
+                    //vypise hlasku spravna odpoved, iniciuje zobrazenie dalsej otazky
+                    spravna();
+                }
+                else if(result == true){
+                    //zmaze danu moznost, odpocita dva body
+                    canvas.removeLayer(v.nazov);
+                    nespravna();
+                }
             }
-            else{
-                //zmaze danu moznost, odpocita dva body
-                nespravna();
-            }
-        }
+        });
+        posX += 150;
     });
 }
 
 function spravna() {
+
+    //upravim bodove hodnotenie
     actual += 1;
     $("#actual").html(actual);
 
@@ -129,7 +155,23 @@ function spravna() {
 }
 
 function nespravna() {
+
+    //upravim bodove hodnotenie
     actual -= 2;
     $("#actual").html(actual);
 }
 
+//vypisem privitaciu hlasku
+$( window ).ready(function () {
+
+    console.log("ahoj");
+    canvas.removeLayers();
+    canvas.clearCanvas().drawText({
+        layer: true,
+        x: 400, y: 200,
+        fillStyle: '#36c',
+        fontSize: 36,
+        fontFamily: 'Verdana, sans-serif',
+        text: "Pre začiatok stlač tlačidlo štart!"
+    });
+});

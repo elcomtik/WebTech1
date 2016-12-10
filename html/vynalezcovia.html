@@ -21,34 +21,38 @@
 </div>
 
 <div id="hra" class="container-fluid bs-docs-grid text-center">
-    <div id="pravidla" class="col-lg col-md col-sm ">
-        Hra spočíva v priraďovaní správneho vynálezu k vynálezcovi. Na obrazovke sa zoradí vždy práve jeden Slovenský
-        vynálezca
-        a niekoľko náhodne vybraných vynálezov. Je potrebné chytiť myšou vynález a potiahnuť ho nad vynálezcu. Hráč v
-        jednej hre
-        dostane 5 rôznych úloh. Hodnotenie je nasledovné:
-        - na počiatku má hráč 0b
-        - za každé správne priradenie dostane +1b
-        - za každé ne-správne priradenie dostane -2b
-
-        Hráčovi sa zobrazuje jeho aktuálne skóre a jeho najvyššie dosiahnuté skôre v predošlých hrách.
+    <div id="pravidla" class="col-lg col-md col-sm text-left">
+        <p>
+            Hra spočíva v priraďovaní správneho vynálezu k vynálezcovi. Na obrazovke sa zoradí vždy práve jeden
+            Slovenský vynálezca a niekoľko náhodne vybraných vynálezov. Je potrebné chytiť myšou vynález a potiahnuť ho
+            nad vynálezcu. Hráč v jednej hre dostane 5 rôznych úloh. Hodnotenie je nasledovné:
+        <ul class="text-left">
+            <li>na počiatku má hráč 0b</li>
+            <li>za každé správne priradenie dostane +1b</li>
+            <li>za každé ne-správne priradenie dostane -2b</li>
+        </ul>
+        </p>
+        <p>
+            Hráčovi sa zobrazuje jeho aktuálne skóre a jeho najvyššie dosiahnuté skôre v predošlých hrách.
+        </p>
     </div>
 
-    <button class="btn btn-primary btn-space" onclick="hraj()">Start</button>
-    <div id="score">Aktuálne dosiahnuté skóre:<span id="actual"></span>Najvyššie dosiahnuté skóre:<span id="highest"></span></div>
+    <button class="btn btn-primary btn-space" onclick="hraj()">Štart</button>
+    <div id="score">Aktuálne skóre:<span id="actual"></span>&nbsp;Najvyššie skóre:<span
+            id="highest"></span></div>
     <canvas id="gameCanvas" width="800" height="400"></canvas>
 </div>
 
 <script rel="script" src="../js/vynalezcovia.js"></script>
 
-<div id="footer" class="navbar navbar-fixed-bottom">
-    <footer class="container-fluid text-center">
-        <p>Webové technológie 2016/2017 | <span id='counter'></span></p>
-        <script>
-            checkVisitsCookie();
-        </script>
-    </footer>
-</div>
+
+<footer class="container-fluid text-center">
+    <p>Webové technológie 2016/2017 | <span id='counter'></span></p>
+    <script>
+        checkVisitsCookie();
+    </script>
+</footer>
+
 
 </body>
 </html>
