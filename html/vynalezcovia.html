@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hra priraď vynález</title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/vynalezcovia.css">
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/menu.js"></script>
+    <script type="text/javascript" src="../js/visitCounter.js"></script>
+    <script type="text/javascript" src="../js/vynalezcovia.js"></script>
+</head>
+<body onload="generuj_menu()">
+<div id="nav" class="row">
+    <nav id="navbar"></nav>
+    <ol id="breadcrumb" class="breadcrumb"></ol>
+</div>
+
+<div id="hra"></div>
+
+<div id="footer" class="navbar navbar-fixed-bottom">
+    <footer class="container-fluid text-center">
+        <p>Webové technológie 2016/2017 | <span id='counter'></span></p>
+        <script>
+            checkVisitsCookie();
+        </script>
+    </footer>
+</div>
+
+</body>
+</html>
