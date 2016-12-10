@@ -20,3 +20,11 @@ body{
   height: 20vh;
   margin: auto;
 }
+
+#nmap {
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: 60vh;
+    margin: auto;
+}
